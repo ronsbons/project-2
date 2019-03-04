@@ -10,7 +10,7 @@ class NavBar extends Component {
         return(
             <div>
                 Login/Signup
-                <section>
+                <section id="toggleThingy">
                     <div className="login">
                         <h4>Login</h4>
                         <form className="login" >
