@@ -6,6 +6,7 @@ class HomeContainer extends Component {
     render(){
         return(
             <div>
+               
                 <Carousel/>    
                 <About />
             </div>
