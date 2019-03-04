@@ -4,7 +4,8 @@ class NavBar extends Component {
     render(){
         return(
             <div>
-                Hello World
+                Login/Signup
+                Logout/ Regular NavBar
             </div>
             
         )
