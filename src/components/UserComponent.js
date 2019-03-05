@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import User from './User';
 
 class UserComponent extends Component {
     render(){
+        let userComponent = this.props.userComponent.map( (user) => {
+            return (
+                <User
+                key={user._id}
+                user={user} />
+            )
+        })
+
         return(
-            <div className='userComponent'>
-                <img src='' />
-                <h2>Name</h2>
-                <h2>City</h2>
-                <h2>joinDate</h2>
-            </div>
+            <ul>
+                {userComponent}
+            </ul>
+            
 
         )
     }
