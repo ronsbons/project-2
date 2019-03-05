@@ -15,7 +15,7 @@ class Nav extends Component {
             navBarItems.push(<NavItem key={1} href="/logout"></NavItem>);
         } else{
             navBarItems.push(<UserAuth
-                username={this.props.username}
+                email={this.props.email}
                 password={this.props.password}
                 handleSignup={this.props.handleSignup}
                 handleLogin={this.props.handleLogin}

@@ -15,7 +15,6 @@ class App extends Component {
     email:'',
     user:'',
     password:'',
-    username:''
   }
 
   componentDidMount() {
@@ -36,9 +35,9 @@ class App extends Component {
   // Handle user signup/login input
   handleLogin = (event) => {
       event.preventDefault();
-      axios.post('https://localhost:3001/user/login',{
-          username:this.state.username,
-          password:this.state.password
+      axios.post('http://localhost:3001/user/login',{
+          userEmail:this.state.email,
+          userPassword:this.state.password
       })
       .then( response => {
           localStorage.token=response.data.signedJwt
@@ -53,8 +52,8 @@ class App extends Component {
   // Handles user signup 
   handleSignup = (event) => {
     event.preventDefault();
-    axios.post('https://localhost:3001/user/signup',{
-        username:this.state.username,
+    axios.post('http://localhost:3001/user/signup',{
+        userEmail:this.state.email,
         password:this.state.password
     })
     .then( response => {
@@ -87,7 +86,7 @@ class App extends Component {
       <Nav 
         className="headerContents"
         isLoggedIn={this.state.isLoggedIn}
-        username={this.state.username}
+        email={this.state.email}
         password={this.state.password}
         handleSignup={this.handleSignup}
         handleLogin={this.handleLogin}

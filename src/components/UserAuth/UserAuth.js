@@ -45,9 +45,9 @@ class UserAuth extends Component{
                              >
                                 <input
                                  type="text"
-                                 name="username"
+                                 name="email"
                                  onChange={handleInput}
-                                 placeholder="Username"
+                                 placeholder="Email"
                                 />
                                 <input
                                 type="text"
@@ -67,10 +67,10 @@ class UserAuth extends Component{
                             >
                                 <input
                                 type="text"
-                                name="username"
+                                name="email"
                                 // value={this.props.username}
                                 onChange={handleInput}
-                                placeholder="username"
+                                placeholder="Email"
                                 />
                                 <input
                                 type="text"
