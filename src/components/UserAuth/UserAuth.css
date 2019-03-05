@@ -1,0 +1,16 @@
+#userAuth{
+    color:green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.login {
+    width: 50%;
+}
+
+.signup {
+    width: 50%;
+}
+

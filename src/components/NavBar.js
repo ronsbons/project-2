@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import UserAuth from './UserAuth';
+import UserAuth from './UserAuth/UserAuth';
+import { Navbar, NavItem } from 'react-materialize'; 
 // import {
 //     Switch,
 //     Route,
@@ -10,10 +11,15 @@ class NavBar extends Component {
     render(){
 
         let navBarItems = [];
+        if(this.props.isLoggedIn){
+            navBarItems.push(<NavItem key={1} href="/logout"></NavItem>);
+        } else{
+            navBarItems.push(<UserAuth />)
+        }
 
         return(
-            <div>
-
+            <div id="navBarItems">
+                {navBarItems}
             </div>
             
         )
