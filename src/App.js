@@ -43,7 +43,7 @@ class App extends Component {
           localStorage.token=response.data.signedJwt
           this.setState({
               isLoggedIn:true,
-              user: response.data.user
+              user: response.data
           })
       })
       .catch(err => console.log(err))
