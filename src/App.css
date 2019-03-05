@@ -1,4 +1,4 @@
-.headerContents{
+.headerContents button {
   display: flex;
   color: red;
 }

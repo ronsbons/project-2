@@ -22,6 +22,9 @@ class UserAuth extends Component{
 
 
     render(){
+        let handleInput = this.props.handleInput
+        let handleSignup = this.props.handleSignup
+        let handleLogin = this.props.handleLogin
         return(
                 <div>
                     <button
@@ -37,9 +40,13 @@ class UserAuth extends Component{
                     <section id="userAuth">
                         <div className="login">
                             <h4>Login</h4>
-                            <form className="login" >
+                            <form className="login"
+                            onSubmit={handleLogin}
+                             >
                                 <input
                                  type="text"
+                                 name="username"
+                                 onChange={handleInput}
                                  placeholder="Username"
                                 />
                                 <input
@@ -55,17 +62,26 @@ class UserAuth extends Component{
                         </div>
                         <div className="signup">
                             <h4>Signup</h4>
-                            <form className="signup" >
+                            <form className="signup" 
+                            onSubmit={handleSignup}
+                            >
                                 <input
                                 type="text"
-                                placeholder="UserName"
+                                name="username"
+                                // value={this.props.username}
+                                onChange={handleInput}
+                                placeholder="username"
                                 />
                                 <input
                                 type="text"
+                                name="password"
+                                onChange={handleInput}
                                 placeholder="Password" 
                                 />
                                 <input 
                                 type="text"
+                                name="password"
+                                onChange={handleInput}
                                 placeholder="Confirm Password"
                                 />
                                 <button
