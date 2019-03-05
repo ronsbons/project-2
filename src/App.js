@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./components/Header";
-import HomeContainer from "./container/HomeContainer"
-import UserContainer from './container/UserContainer';
-// import { 
-//   Switch,
-//   Route
-// } from "react-router-dom";
+import HomeContainer from './container/HomeContainer';
+import MainContainer from './container/MainContainer.js';
 
 class App extends Component {
   render() {
@@ -14,8 +10,11 @@ class App extends Component {
       <Header />
 
       <HomeContainer />
-      {/* Switch */}
-      <UserContainer />
+
+      <MainContainer />
+
+
+
 
       </div>
     );

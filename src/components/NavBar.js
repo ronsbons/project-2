@@ -1,9 +1,9 @@
-import React,{Component} from 'react';
-import {
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom';
+import React, {Component} from 'react';
+// import {
+//     Switch,
+//     Route,
+//     Link
+// } from 'react-router-dom';
 
 class NavBar extends Component {
     render(){
