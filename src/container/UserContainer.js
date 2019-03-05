@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
+import UserComponent from '../components/UserComponent';
 
 
 class UserContainer extends Component {
     render(){
         return(
-            <div>Working</div>
+            <div>
+                <UserComponent />
+            </div>
         )
     }
 }
