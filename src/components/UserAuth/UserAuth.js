@@ -52,6 +52,8 @@ class UserAuth extends Component{
                                 <input
                                 type="text"
                                 placeholder="Password"
+                                name="password"
+                                onChange={handleInput}
                                 />
                                 <button 
                                 className="loginButton"

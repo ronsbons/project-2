@@ -36,8 +36,8 @@ class App extends Component {
   handleLogin = (event) => {
       event.preventDefault();
       axios.post('http://localhost:3001/user/login',{
-          userEmail:this.state.email,
-          userPassword:this.state.password
+          email:this.state.email,
+          password:this.state.password
       })
       .then( response => {
           localStorage.token=response.data.signedJwt
@@ -53,7 +53,7 @@ class App extends Component {
   handleSignup = (event) => {
     event.preventDefault();
     axios.post('http://localhost:3001/user/signup',{
-        userEmail:this.state.email,
+        email:this.state.email,
         password:this.state.password
     })
     .then( response => {
