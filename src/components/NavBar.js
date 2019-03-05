@@ -14,7 +14,7 @@ class NavBar extends Component {
         if(this.props.isLoggedIn){
             navBarItems.push(<NavItem key={1} href="/logout"></NavItem>);
         } else{
-            navBarItems.push(<UserAuth />)
+            navBarItems.push(<UserAuth key={2} />)
         }
 
         return(
