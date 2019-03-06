@@ -3,10 +3,10 @@
     
 }
 
-Nav {
+/* Nav {
     display: flex;
     flex-direction: row-reverse;
-}
+} */
 
 #loginBtn {
     background:teal;

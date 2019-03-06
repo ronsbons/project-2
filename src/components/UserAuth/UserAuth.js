@@ -36,6 +36,8 @@ class Navmodal extends Component{
         let handleInput = this.props.handleInput
         let handleSignup = this.props.handleSignup
         let handleLogin = this.props.handleLogin
+        let signUpError = this.props.message
+        let loginError = this.props.message
         return(
                 <div>
                     <button
@@ -53,6 +55,9 @@ class Navmodal extends Component{
                     >
                         <div className="login">
                             <h4>Login</h4>
+                            <span
+                                className="errorMessage"
+                                >{loginError}</span>
                             <form className="login"
                             onSubmit={handleLogin}
                              >
@@ -77,6 +82,9 @@ class Navmodal extends Component{
                         </div>
                         <div className="signup">
                             <h4>Signup</h4>
+                            <span
+                                className="errorMessage"
+                                >{signUpError}</span>
                             <form className="signup" 
                             onSubmit={handleSignup}
                             >
