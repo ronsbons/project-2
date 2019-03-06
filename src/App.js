@@ -17,6 +17,7 @@ class App extends Component {
     password:'',
   }
 
+  // [] THIS ONLY RUNS WHEN THE PAGE RELOADS AND LOGS ME OUT, BUT I STILL HAVE A TOKEN IN LOCALSTORAGE
   componentDidMount() {
     if(localStorage.token) {
       // [] TEST THIS IN POSTMAN
@@ -43,10 +44,9 @@ class App extends Component {
 
   handleInput = (event) => {
     this.setState({
-    [event.target.name]: event.target.value
-    })
-    console.log(event.target.value);
-  }
+      [event.target.name]: event.target.value
+    });
+  };
 
   // Handle user signup/login input
   handleLogin = (event) => {
