@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import UserAuth from './UserAuth/UserAuth';
 import { Navbar, NavItem } from 'react-materialize'; 
-// import {
-//     Switch,
-//     Route,
-//     Link
-// } from 'react-router-dom';
+import "./NavBar.css"
+
+
 
 class Nav extends Component {
+
     render(){
 
         let navBarItems = [];
@@ -24,6 +23,7 @@ class Nav extends Component {
             navBarItems.push(<UserAuth
                 email={this.props.email}
                 password={this.props.password}
+                message={this.props.message}
                 handleSignup={this.props.handleSignup}
                 handleLogin={this.props.handleLogin}
                 handleLogout={this.props.handleLogout}
@@ -32,9 +32,10 @@ class Nav extends Component {
         }
 
         return(
-            <Navbar id="navBarItems">
+             <Navbar id="navBarItems">
                 {navBarItems}
             </Navbar>
+
             
         )
     }
