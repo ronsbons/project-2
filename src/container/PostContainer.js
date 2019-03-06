@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import PostsModel from "../models/PostsModel";
-// import PostList from "../components/PostList";
+import PostList from "../components/PostList";
+import PostDetail from "../components/PostDetail";
 
 class PostContainer extends Component {
   state = {
-    posts: []
+    posts: [],
+    post: {
+      postTitle: "",
+      user: "",
+      postContent: ""
+    }
   };
 
   componentDidMount() {
@@ -14,16 +20,16 @@ class PostContainer extends Component {
   fetchData() {
     PostsModel.allPosts().then(res => {
       console.log(res);
-      this.setState({
-        posts: res.data.posts,
-        post: ""
-      });
+      this.setState({ posts: res.data });
     });
   }
+
   render() {
     return (
-      <div className="postsComponent">
-        {/* <PostList posts={this.state.posts} /> */}
+      <div className="postsConstainer">
+        <h2>This is a post container</h2>
+        <PostList posts={this.state.posts} />
+        <PostDetail post={this.state.post} />
       </div>
     );
   }
