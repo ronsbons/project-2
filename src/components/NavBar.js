@@ -23,8 +23,8 @@ class Nav extends Component {
             navBarItems.push(<UserAuth
                 email={this.props.email}
                 password={this.props.password}
-                message={this.props.message}
-                handleSignup={this.props.handleSignup}
+                signupMessage={this.props.signupMessage}
+                loginMessage={this.props.loginMessage}                handleSignup={this.props.handleSignup}
                 handleLogin={this.props.handleLogin}
                 handleLogout={this.props.handleLogout}
                 handleInput={this.props.handleInput}
