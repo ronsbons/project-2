@@ -13,12 +13,12 @@ class App extends Component {
   state = {
     isLoggedIn: false,
     email:'',
-    user:'',
+    user: '',
     password:'',
     message:''
   }
 
-  // [] THIS ONLY RUNS WHEN THE PAGE RELOADS AND LOGS ME OUT, BUT I STILL HAVE A TOKEN IN LOCALSTORAGE
+  // [] THIS DOESN'T RUN UNLESS I REFRESH THE PAGE
   componentDidMount() {
     if(localStorage.token) {
       axios({
@@ -27,7 +27,6 @@ class App extends Component {
         headers: {authorization: `Bearer ${localStorage.token}`},
       }).then( (response) => {
         console.log(response.data);
-        // [] WALK-IT-OUT SETS USER STATE, IS THIS NEEDED HERE?
         this.setState({
           isLoggedIn:true,
           user: response.data,
@@ -128,18 +127,12 @@ class App extends Component {
       }}
       />
 
-<<<<<<< HEAD
-      <MainContainer 
-        className="main"
-        user={this.state.user}
-=======
       <Route path='/Main'
       render={() => {
         return (
           <MainContainer isLoggedIn={this.state.isLoggedIn} />
         )
       }}
->>>>>>> 31f5bdf8d5900ff89b27d4a913ac55a9a864dd8c
       />
       </Switch>
 
