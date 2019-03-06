@@ -15,6 +15,7 @@ class App extends Component {
     email:'',
     user:'',
     password:'',
+    message:''
   }
 
   // [] THIS ONLY RUNS WHEN THE PAGE RELOADS AND LOGS ME OUT, BUT I STILL HAVE A TOKEN IN LOCALSTORAGE
@@ -58,10 +59,14 @@ class App extends Component {
           localStorage.token=response.data.signedJwt
           this.setState({
               isLoggedIn:true,
-              user: response.data
+              user: response.data.user
           })
       })
-      .catch(err => console.log(err))
+      .catch(response => {
+        this.setState({
+          message:response.data.message
+        })
+      })
   }
  
   // Handles user signup 
@@ -78,7 +83,11 @@ class App extends Component {
             user: response.data.user
         })
     })
-    .catch(err => console.log(err))
+    .catch(response =>{
+      this.setState({
+        message:response.data.message
+      })
+    })
    }
 
    // Handle user logout
@@ -103,20 +112,37 @@ class App extends Component {
         isLoggedIn={this.state.isLoggedIn}
         email={this.state.email}
         password={this.state.password}
+        message={this.state.message}
         handleSignup={this.handleSignup}
         handleLogin={this.handleLogin}
         handleLogout={this.handleLogout}
         handleInput={this.handleInput}
       />
+      <Switch>
 
-      <HomeContainer
-      className="homePage"
-       />
+       <Route exact path="/"
+       render={() => {
+        return (
+          <HomeContainer isLoggedIn={this.state.isLoggedIn} />
+        )
+      }}
+      />
 
+<<<<<<< HEAD
       <MainContainer 
         className="main"
         user={this.state.user}
+=======
+      <Route path='/Main'
+      render={() => {
+        return (
+          <MainContainer isLoggedIn={this.state.isLoggedIn} />
+        )
+      }}
+>>>>>>> 31f5bdf8d5900ff89b27d4a913ac55a9a864dd8c
       />
+      </Switch>
+
 
       </div>
     );
