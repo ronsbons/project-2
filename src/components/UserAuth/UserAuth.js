@@ -50,7 +50,7 @@ class UserAuth extends Component{
                                  placeholder="Email"
                                 />
                                 <input
-                                type="text"
+                                type="password"
                                 placeholder="Password"
                                 name="password"
                                 onChange={handleInput}
