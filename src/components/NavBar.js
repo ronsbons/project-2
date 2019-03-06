@@ -7,23 +7,37 @@ import { Navbar, NavItem } from 'react-materialize';
 //     Link
 // } from 'react-router-dom';
 
-class NavBar extends Component {
+class Nav extends Component {
     render(){
 
         let navBarItems = [];
         if(this.props.isLoggedIn){
-            navBarItems.push(<NavItem key={1} href="/logout"></NavItem>);
+            navBarItems.push(<NavItem key={1} href="/logout">
+            <button
+            className="logOutBtn"
+            onClick={this.props.handleLogout}
+            >
+            Logout
+            </button>
+            </NavItem>);
         } else{
-            navBarItems.push(<UserAuth />)
+            navBarItems.push(<UserAuth
+                email={this.props.email}
+                password={this.props.password}
+                handleSignup={this.props.handleSignup}
+                handleLogin={this.props.handleLogin}
+                handleLogout={this.props.handleLogout}
+                handleInput={this.props.handleInput}
+                 key={2} />)
         }
 
         return(
-            <div id="navBarItems">
+            <Navbar id="navBarItems">
                 {navBarItems}
-            </div>
+            </Navbar>
             
         )
     }
 }
 
-export default NavBar;
+export default Nav;

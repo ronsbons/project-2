@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import Header from "./components/Header";
+import Nav from "./components/NavBar";
 import HomeContainer from './container/HomeContainer';
 import MainContainer from './container/MainContainer.js';
 import {
   Route,
   Switch
 } from 'react-router-dom';
+import axios from 'axios';
+import './App.css';
 
 class App extends Component {
   state = {
-    email:'',
-    password:'',
     isLoggedIn: false,
-    userName:''
+    email:'',
+    user:'',
+    password:'',
   }
 
   componentDidMount() {
@@ -23,39 +25,82 @@ class App extends Component {
     }
   }
 
-  handleInput (event) {
+  handleInput = (event) => {
     this.setState({
-      userName: event.target.value.Username,
-      password:event.target.value.password,
-      email:event.target.value.email
+    [event.target.name]: event.target.value
     })
+    console.log(event.target.value);
   }
 
   // Handle user signup/login input
   handleLogin = (event) => {
+      event.preventDefault();
+      axios.post('http://localhost:3001/user/login',{
+          email:this.state.email,
+          password:this.state.password
+      })
+      .then( response => {
+          localStorage.token=response.data.signedJwt
+          this.setState({
+              isLoggedIn:true,
+              user: response.data
+          })
+      })
+      .catch(err => console.log(err))
   }
  
   // Handles user signup 
   handleSignup = (event) => {
-  }
+    event.preventDefault();
+    axios.post('http://localhost:3001/user/signup',{
+        email:this.state.email,
+        password:this.state.password
+    })
+    .then( response => {
+        localStorage.token=response.data.signedJwt
+        this.setState({
+            isLoggedIn:true,
+            user: response.data.user
+        })
+    })
+    .catch(err => console.log(err))
+   }
 
    // Handle user logout
    handleLogout = (event) => {
+     this.setState({
+       email:'',
+       password:'',
+       isLoggedIn:false
 
+     })
+     localStorage.clear();
   }
+
+
 
   
   render() {
     return (
       <div className="App">
-      <Header isLoggedIn={this.state.isLoggedIn}/>
+      <Nav 
+        className="headerContents"
+        isLoggedIn={this.state.isLoggedIn}
+        email={this.state.email}
+        password={this.state.password}
+        handleSignup={this.handleSignup}
+        handleLogin={this.handleLogin}
+        handleLogout={this.handleLogout}
+        handleInput={this.handleInput}
+      />
 
-      <HomeContainer />
+      <HomeContainer
+      className="homePage"
+       />
 
-      <MainContainer />
-
-
-
+      <MainContainer 
+      className="main"
+      />
 
       </div>
     );
