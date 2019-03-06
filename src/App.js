@@ -18,12 +18,28 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if(localStorage.token){
+    if(localStorage.token) {
+      // [] TEST THIS IN POSTMAN
+      axios({
+        method: 'GET',
+        url: 'http://localhost:3001/user',
+        headers: {authorization: `Bearer ${localStorage.token}`},
+      }).then( (response) => {
+        console.log(response.data);
+        // [] WALK-IT-OUT SETS USER STATE, IS THIS NEEDED HERE?
+        this.setState({
+          isLoggedIn:true,
+          user: response.data,
+        });
+      }).catch( (error) => {
+        console.log('axios get header bearer: ', error);
+      });
+    } else {
       this.setState({
-        isLoggedIn:true
-      })
-    }
-  }
+        isLoggedIn: false,
+      });
+    };
+  };
 
   handleInput = (event) => {
     this.setState({
@@ -99,7 +115,8 @@ class App extends Component {
        />
 
       <MainContainer 
-      className="main"
+        className="main"
+        user={this.state.user}
       />
 
       </div>
