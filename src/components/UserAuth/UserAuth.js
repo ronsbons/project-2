@@ -36,8 +36,10 @@ class Navmodal extends Component{
         let handleInput = this.props.handleInput
         let handleSignup = this.props.handleSignup
         let handleLogin = this.props.handleLogin
-        let signUpError = this.props.message
-        let loginError = this.props.message
+        
+        let signUpError = this.props.signupMessage
+        let loginError = this.props.loginMessage
+
         return(
                 <div>
                     <button

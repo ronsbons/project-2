@@ -15,7 +15,8 @@ class App extends Component {
     email:'',
     user: '',
     password:'',
-    message:''
+    loginMessage:'',
+    signupMessage:''
   }
 
   // [] THIS DOESN'T RUN UNLESS I REFRESH THE PAGE
@@ -50,7 +51,7 @@ class App extends Component {
   // Handle user signup/login input
   handleLogin = (event) => {
       event.preventDefault();
-      axios.post('http://localhost:3001/user/login',{
+      axios.post('http://localhost:3002/user/login',{
           email:this.state.email,
           password:this.state.password
       })
@@ -63,7 +64,7 @@ class App extends Component {
       })
       .catch(response => {
         this.setState({
-          message:response.data.message
+          loginMessage:'Email/Password incorrect'
         })
       })
   }
@@ -71,7 +72,7 @@ class App extends Component {
   // Handles user signup 
   handleSignup = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3001/user/signup',{
+    axios.post('http://localhost:3002/user/signup',{
         email:this.state.email,
         password:this.state.password
     })
@@ -84,7 +85,7 @@ class App extends Component {
     })
     .catch(response =>{
       this.setState({
-        message:response.data.message
+        signupMessage:'Email address already exists'
       })
     })
    }
@@ -111,7 +112,8 @@ class App extends Component {
         isLoggedIn={this.state.isLoggedIn}
         email={this.state.email}
         password={this.state.password}
-        message={this.state.message}
+        signupMessage={this.state.signupMessage}
+        loginMessage={this.state.loginMessage}
         handleSignup={this.handleSignup}
         handleLogin={this.handleLogin}
         handleLogout={this.handleLogout}
