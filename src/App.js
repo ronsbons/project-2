@@ -20,7 +20,6 @@ class App extends Component {
   // [] THIS ONLY RUNS WHEN THE PAGE RELOADS AND LOGS ME OUT, BUT I STILL HAVE A TOKEN IN LOCALSTORAGE
   componentDidMount() {
     if(localStorage.token) {
-      // [] TEST THIS IN POSTMAN
       axios({
         method: 'GET',
         url: 'http://localhost:3001/user',
