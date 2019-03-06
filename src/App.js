@@ -15,6 +15,7 @@ class App extends Component {
     email:'',
     user:'',
     password:'',
+    message:''
   }
 
   componentDidMount() {
@@ -43,10 +44,14 @@ class App extends Component {
           localStorage.token=response.data.signedJwt
           this.setState({
               isLoggedIn:true,
-              user: response.data
+              user: response.data.user
           })
       })
-      .catch(err => console.log(err))
+      .catch(response => {
+        this.setState({
+          message:response.data.message
+        })
+      })
   }
  
   // Handles user signup 
@@ -63,7 +68,11 @@ class App extends Component {
             user: response.data.user
         })
     })
-    .catch(err => console.log(err))
+    .catch(response =>{
+      this.setState({
+        message:response.data.message
+      })
+    })
    }
 
    // Handle user logout
@@ -88,19 +97,31 @@ class App extends Component {
         isLoggedIn={this.state.isLoggedIn}
         email={this.state.email}
         password={this.state.password}
+        message={this.state.message}
         handleSignup={this.handleSignup}
         handleLogin={this.handleLogin}
         handleLogout={this.handleLogout}
         handleInput={this.handleInput}
       />
+      <Switch>
 
-      <HomeContainer
-      className="homePage"
-       />
-
-      <MainContainer 
-      className="main"
+       <Route exact path="/"
+       render={() => {
+        return (
+          <HomeContainer isLoggedIn={this.state.isLoggedIn} />
+        )
+      }}
       />
+
+      <Route path='/Main'
+      render={() => {
+        return (
+          <MainContainer isLoggedIn={this.state.isLoggedIn} />
+        )
+      }}
+      />
+      </Switch>
+
 
       </div>
     );
