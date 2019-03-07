@@ -4,22 +4,6 @@ import './UserAuth.css'
 
 
 class UserAuth extends Component{
-    state= {
-        open:false
-    }
-
-    handleOpen = () => {
-        this.setState ({
-            open:true
-        })
-    }
-
-    handleClose = () => {
-        this.setState({
-            open:false
-        })
-    }
-
 
     render(){
         let handleInput = this.props.handleInput

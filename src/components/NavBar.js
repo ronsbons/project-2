@@ -23,25 +23,33 @@ class NavBar extends Component {
         let navBarItems = [];
         if(this.props.isLoggedIn){
             navBarItems.push(
-                <MenuItem>
-                <button
-                    className="logOutBtn"
-                    onClick={this.props.handleLogout}>
-                    Logout
-                </button>
-               
+            <Menu.Menu position='right'>
+            <MenuItem>
+                    <button
+                        className="logOutBtn"
+                        onClick={this.props.handleLogout}>
+                        Logout
+                    </button>
+                </MenuItem>
+
+               <MenuItem>
                    <Link to="/cities">
-                    Cities
+                        Cities
                     </Link>  
 
+                </MenuItem>
+                
+                <MenuItem>
                 <Link to="/profile">
                 Profile</Link> 
                 </MenuItem>
-             
+
+            </Menu.Menu>
+                
             );
         } else{
             navBarItems.push(
-                <MenuItem>
+                <Menu.Menu position='right'>
                 <UserAuth
                 email={this.props.email}
                 password={this.props.password}
@@ -51,10 +59,10 @@ class NavBar extends Component {
                 handleLogin={this.props.handleLogin}
                 handleLogout={this.props.handleLogout}
                 handleInput={this.props.handleInput}
-            
                  />
 
-                </MenuItem>
+                </Menu.Menu>
+
                 )
         }
 
