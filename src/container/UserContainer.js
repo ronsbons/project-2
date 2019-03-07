@@ -1,19 +1,15 @@
-import React, {Component} from 'react';
-import UpdateUserForm from '../components/UpdateUserForm';
 
-
+import React, { Component } from "react";
+import PostContainer from "./PostContainer";
 class UserContainer extends Component {
-  state = {
-    user: this.props.user,
-  };
+  render() {
 
-  render(){
-    return(
-      <div>
-        <p>Working</p>
-        <UpdateUserForm user={this.state.user} updateUserFullName={this.props.updateUserFullName} />
+    return (
+      <div className="userContainer">
+        <h1>This is the user Container</h1>
+        <PostContainer />
       </div>
-    )
+    );
   }
 }
 
