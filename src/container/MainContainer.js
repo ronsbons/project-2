@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CityContainer from './CityContainer'
 import UserContainer from './UserContainer';
-import Axios from 'axios';
+
 
 class MainContainer extends Component {
   render(){

@@ -1,5 +1,4 @@
 import axios from "axios";
-var qs = require('querystring');
 
 const endPoint = `http://localhost:3001/api/users`;
 
@@ -10,8 +9,12 @@ class UserModel {
     console.log(request)
     return request;
   }
-  
 
+  static update(userId, updateInfo) {
+    let request = axios.put(`${endPoint}/${userId}`, updateInfo)
+    return request
+  }
+  
 }
 
 export default UserModel;
