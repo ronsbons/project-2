@@ -1,26 +1,28 @@
 import React, {Component} from 'react';
 import UserAuth from './UserAuth/UserAuth';
-import { Navbar, NavItem } from 'react-materialize'; 
 import "./NavBar.css"
 
 
 
-class Nav extends Component {
+class NavBar extends Component {
 
     render(){
-
         let navBarItems = [];
         if(this.props.isLoggedIn){
-            navBarItems.push(<NavItem key={1} href="/logout">
-            <button
-            className="logOutBtn"
-            onClick={this.props.handleLogout}
-            >
-            Logout
-            </button>
-            </NavItem>);
+            navBarItems.push(
+                <li>
+                <button
+                    className="logOutBtn"
+                    onClick={this.props.handleLogout}>
+                    Logout
+                </button>
+                </li>
+
+            );
         } else{
-            navBarItems.push(<UserAuth
+            navBarItems.push(
+                <li>
+                <UserAuth
                 email={this.props.email}
                 password={this.props.password}
                 signupMessage={this.props.signupMessage}
@@ -28,21 +30,21 @@ class Nav extends Component {
                 handleLogin={this.props.handleLogin}
                 handleLogout={this.props.handleLogout}
                 handleInput={this.props.handleInput}
-                 key={2} />)
+            
+                 />
+                </li>
+                )
         }
 
         return(
-             <Navbar 
-             brand='logo'
-             right
-             >
-             
-                {navBarItems}
-            </Navbar>
-
+             <nav>
+                <ul>
+                    {navBarItems}
+                </ul>
+             </nav>       
             
         )
     }
 }
 
-export default Nav;
+export default NavBar;
