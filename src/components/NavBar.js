@@ -1,5 +1,17 @@
 import React, {Component} from 'react';
 import UserAuth from './UserAuth/UserAuth';
+import {
+    Container,
+    Divider,
+    Dropdown,
+    Grid,
+    Header,
+    Image,
+    List,
+    Menu,
+    Segment,
+    MenuItem,
+  } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import "./NavBar.css"
 
@@ -11,30 +23,25 @@ class NavBar extends Component {
         let navBarItems = [];
         if(this.props.isLoggedIn){
             navBarItems.push(
-                <div>
-                <li>
+                <MenuItem>
                 <button
                     className="logOutBtn"
                     onClick={this.props.handleLogout}>
                     Logout
                 </button>
-                </li>
-
-                <li>
+               
                    <Link to="/cities">
                     Cities
                     </Link>  
-                </li>
 
-                <li>
                 <Link to="/profile">
                 Profile</Link> 
-                </li>
-                </div>
+                </MenuItem>
+             
             );
         } else{
             navBarItems.push(
-                <li>
+                <MenuItem>
                 <UserAuth
                 email={this.props.email}
                 password={this.props.password}
@@ -46,17 +53,29 @@ class NavBar extends Component {
                 handleInput={this.props.handleInput}
             
                  />
-                </li>
+
+                </MenuItem>
                 )
         }
 
         return(
-             <nav>
-                <ul>
-                    {navBarItems}
-                </ul>
-             </nav>       
+            <div>
+                <Menu inverted>
             
+                <Menu.Item as='a' header>
+                <Image size='mini' 
+                src='https://cdn.shopify.com/s/files/1/1321/6369/products/duck-react_d70b50e7-3ee8-4919-85f2-227f64c17b6e_1024x1024.png?v=1518578570' 
+                style={{ marginRight: '1.5em' }} />
+                WayFare
+                 </Menu.Item>
+                 <Container>
+                     {navBarItems}
+                 </Container>
+                
+                </Menu>
+                
+            </div>
+               
         )
     }
 }
