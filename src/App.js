@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from "./components/NavBar";
 import HomeContainer from './container/HomeContainer';
-import MainContainer from './container/MainContainer.js';
+import UserContainer from './container/UserContainer';
 import {
   Route,
   Switch,
@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import CityContainer from './container/CityContainer';
 
 class App extends Component {
   state = {
@@ -140,7 +141,7 @@ class App extends Component {
                 )
               }else {
                 return (
-                  <HomeContainer isLoggedIn={this.state.isLoggedIn} />
+                  <HomeContainer/>
                 )
               }
             }}
@@ -148,9 +149,12 @@ class App extends Component {
 
           <Route exact path="/profile"
             render={() => {
+
               if(this.state.isLoggedIn){
                 return(
-                  <h1>profile</h1>
+                  < UserContainer 
+                  user={this.state.user}
+                  />
                 )
               } else {
                 return(
@@ -162,13 +166,21 @@ class App extends Component {
             }}
           />
 
-          <Route path='/main'
-            render={() => {
-              return (
-                <MainContainer isLoggedIn={this.state.isLoggedIn} />
-              )
+          <Route exact path="/cities"
+            render={()=>{
+              if(this.state.isLoggedIn){
+                return(
+                  <CityContainer/>
+                )
+              }else{
+                return(
+                  <Redirect to='/'/>
+                )
+              }
             }}
-          />
+            />
+
+         
         </Switch>
       </div>
     );
