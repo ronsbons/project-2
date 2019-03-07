@@ -11,20 +11,17 @@ class Nav extends Component {
 
         let navBarItems = [];
         if(this.props.isLoggedIn){
-            navBarItems.push(<NavItem key={1} href="/logout">
-            <button
-            className="logOutBtn"
-            onClick={this.props.handleLogout}
-            >
-            Logout
-            </button>
+            navBarItems.push(
+            <NavItem key={1} href="/logout" onClick={this.props.handleLogout}>
+                Logout
             </NavItem>);
         } else{
             navBarItems.push(<UserAuth
                 email={this.props.email}
                 password={this.props.password}
                 signupMessage={this.props.signupMessage}
-                loginMessage={this.props.loginMessage}                handleSignup={this.props.handleSignup}
+                loginMessage={this.props.loginMessage}
+                handleSignup={this.props.handleSignup}
                 handleLogin={this.props.handleLogin}
                 handleLogout={this.props.handleLogout}
                 handleInput={this.props.handleInput}
