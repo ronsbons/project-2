@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
+import CityModel from '../models/CityModel.js';
 import CityList from '../components/CityList.js';
-import CityPage from '../components/CityPage.js';
-import Axios from 'axios';
 
 class CityContainer extends Component {
   state = {
@@ -9,7 +8,7 @@ class CityContainer extends Component {
   };
 
   componentDidMount() {
-    Axios.get('http://localhost:3001/api/cities').then( (response) => {
+    CityModel.allCities().then( (response) => {
       this.setState({
         cities: response.data.cities,
       });

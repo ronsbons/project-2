@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CityPage from './CityPage.js';
 
 class City extends Component {
   state = {
@@ -17,7 +18,7 @@ class City extends Component {
     return (
       <div>
         <h5>City component</h5>
-        <a href="#" onClick={this.changeCity}>{this.props.city.cityName}</a>
+        <button onClick={this.changeCity}>{this.props.city.cityName}</button>
         <CityPage city={this.state.city} user={this.props.user} />
       </div>
     );

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
 
 class CreatePostForm extends Component {
   state = {
@@ -11,7 +10,7 @@ class CreatePostForm extends Component {
   };
 
   handleInput = (event) => {
-    event.preventDefault;
+    event.preventDefault();
     this.setState({
       [event.target.name]: event.target.value,
     })

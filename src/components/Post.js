@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 
 class Post extends Component {
+  showPost = (event) => {
+    event.preventDefault();
+  };
+  
   render() {
     return (
       <li data-posts-index={this.props.post.id}>
-        <a href="#">{this.props.post.postTitle}</a>
+        <button onClick={this.showPost}>{this.props.post.postTitle}</button>
       </li>
     );
   }

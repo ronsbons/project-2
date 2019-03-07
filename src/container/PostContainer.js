@@ -5,14 +5,16 @@ import PostDetail from "../components/PostDetail";
 
 class PostContainer extends Component {
   state = {
+    userId: this.props.user._id,
     posts: [],
-    post: null
+    post: null,
   };
 
   componentDidMount() {
     this.fetchData();
   }
 
+  // [] NEED TO REVISE THIS AXIOS CALL TO JUST GET POSTS USING THE USERID
   fetchData() {
     PostsModel.allPosts().then(res => {
       console.log(res);

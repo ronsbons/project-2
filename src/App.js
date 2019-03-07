@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Nav from "./components/NavBar";
 import HomeContainer from './container/HomeContainer';
-import MainContainer from './container/MainContainer.js';
+import UserContainer from './container/UserContainer.js';
+import CityContainer from './container/CityContainer.js';
 import {
   Route,
   Switch,
   Redirect,
-  withRouter
 } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
@@ -126,47 +126,51 @@ class App extends Component {
           handleInput={this.handleInput}
         />
         <Switch>
-          <Route exact path="/"
+          <Route
+            exact path="/"
             render={() => {
               if(this.state.isLoggedIn){
                 return(
                   <Redirect to="/profile" />
                 )
-              }else {
+              } else {
                 return (
-                  <HomeContainer isLoggedIn={this.state.isLoggedIn} />
+                  <HomeContainer />
                 )
-              }
+              };
             }}
           />
-
-          <Route exact path="/profile"
+          <Route
+            exact path="/profile"
             render={() => {
               if(this.state.isLoggedIn){
                 return(
-                  <h1>profile</h1>
+                  <UserContainer 
+                    user={this.state.user}
+                  />
+                )
+              } else {
+                return <Redirect to="/" />;
+              };
+            }}
+          />
+          <Route exact path="/cities"
+            render={() => {
+              if(this.state.isLoggedIn){
+                return(
+                  <CityContainer/>
                 )
               } else {
                 return(
-                  <Redirect to="/" />
+                  <Redirect to='/'/>
                 )
-                
-              }
-              
-            }}
-          />
-
-          <Route path='/main'
-            render={() => {
-              return (
-                <MainContainer isLoggedIn={this.state.isLoggedIn} />
-              )
+              };
             }}
           />
         </Switch>
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;

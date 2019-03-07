@@ -52,7 +52,7 @@ class CityPage extends Component {
         <h6>cityName - {this.props.city.cityName}</h6>
         <p>cityPhoto - <img src={this.props.city.cityPhoto} alt={this.props.city.cityName}></img></p>
         <p>hard coded image - <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1444253482%2FDG2015-san-francisco.jpg%3Fitok%3DMdRJm2Zo&f=1" alt="Golden Gate Bridge at dusk"></img></p>
-        <CreatePostForm createPost={this.createPost} user={} />
+        <CreatePostForm createPost={this.createPost} user={this.props.user} />
         <PostContainer posts={this.state.posts} user={this.props.user} />
       </div>
     );
