@@ -3,6 +3,7 @@ import Modal from '@material-ui/core/Modal';
  
 
 class PostDetail extends Component {
+  
   render() {
     return (
       <div>
@@ -10,9 +11,9 @@ class PostDetail extends Component {
           Edit 
         </button>
         <Modal>
-          <h1>{this.props.post.postTitle}</h1>
+          {/* <h1>{this.props.post.postTitle}</h1>
           <h2>{this.props.post.user.userEmail}</h2>
-          <p>{this.props.post.postContent}</p>
+          <p>{this.props.post.postContent}</p> */}
         </Modal>
       </div>
     );
