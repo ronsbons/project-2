@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Nav from "./components/NavBar";
 import HomeContainer from './container/HomeContainer';
 import UserContainer from './container/UserContainer.js';
@@ -10,110 +10,114 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import CityContainer from './container/CityContainer';
 
 class App extends Component {
   state = {
     isLoggedIn: false,
-    email:'',
-    user: '',
-    password:'',
-    loginMessage:'',
-    signupMessage:''
-  }
-
-  componentDidMount() {
-    this.verify()
+    email: "",
+    user: "",
+    password: "",
+    loginMessage: "",
+    signupMessage: ""
   };
 
-
-  verify = () => {
-    console.log('verify')
-    if(localStorage.token) {
-      axios({
-        method: 'GET',
-        url: 'http://localhost:3001/user',
-        headers: {authorization: `Bearer ${localStorage.token}`},
-      }).then( (response) => {
-        console.log(response.data);
-        this.setState({
-          isLoggedIn:true,
-          user: response.data,
-        });
-      }).catch( (error) => {
-        console.log('axios get header bearer: ', error);
-      });
-    } else {
-      this.setState({
-        isLoggedIn: false,
-      });
-    };
+  componentDidMount() {
+    this.verify();
   }
 
-  handleInput = (event) => {
+  verify = () => {
+    console.log("verify");
+    if (localStorage.token) {
+      axios({
+        method: "GET",
+        url: "http://localhost:3001/user",
+        headers: { authorization: `Bearer ${localStorage.token}` }
+      })
+        .then(response => {
+          console.log(response.data);
+          this.setState({
+            isLoggedIn: true,
+            user: response.data
+          });
+        })
+        .catch(error => {
+          console.log("axios get header bearer: ", error);
+        });
+    } else {
+      this.setState({
+        isLoggedIn: false
+      });
+    }
+  };
+
+  handleInput = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
   // Handle user signup/login input
-  handleLogin = (event) => {
-      event.preventDefault();
-      axios.post('http://localhost:3001/user/login',{
-          email:this.state.email,
-          password:this.state.password
+  handleLogin = event => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:3001/user/login", {
+        email: this.state.email,
+        password: this.state.password
       })
-      .then( response => {
+      .then(response => {
         // debugger;
-        localStorage.token = response.data.signedJwt
+        localStorage.token = response.data.signedJwt;
         this.setState({
-            isLoggedIn: true,
-            user: response.data.user
-        })
-        this.verify()
+          isLoggedIn: true,
+          user: response.data.user
+        });
+        this.verify();
       })
       .catch( error => {
         this.setState({
-          loginMessage:'Email/Password incorrect'
-        })
-      })
-  }
- 
-  // Handles user signup 
-  handleSignup = (event) => {
-    event.preventDefault();
-    axios.post('http://localhost:3001/user/signup',{
-        email:this.state.email,
-        password:this.state.password
-    })
-    .then( response => {
-        localStorage.token = response.data.signedJwt
-        this.setState({
-            isLoggedIn: true,
-            user: response.data.user
-        })
-        this.verify()
-    })
-    .catch( error => {
-      this.setState({
-        signupMessage:'Email address already exists'
-      })
-    })
-   }
+          loginMessage: "Email/Password incorrect"
+        });
+      });
+  };
 
-   // Handle user logout
-   handleLogout = (event) => {
-     this.setState({
-       email:'',
-       password:'',
-       isLoggedIn:false
-     })
-     localStorage.clear();
-  }
-  
+  // Handles user signup
+  handleSignup = event => {
+    event.preventDefault();
+    axios
+      .post("http://localhost:3001/user/signup", {
+        email: this.state.email,
+        password: this.state.password
+      })
+      .then(response => {
+        localStorage.token = response.data.signedJwt;
+        this.setState({
+          isLoggedIn: true,
+          user: response.data.user
+        });
+        this.verify();
+      })
+      .catch(error => {
+        this.setState({
+          signupMessage: "Email address already exists"
+        });
+      });
+  };
+
+  // Handle user logout
+  handleLogout = event => {
+    this.setState({
+      email: "",
+      password: "",
+      isLoggedIn: false
+    });
+    localStorage.clear();
+  };
+
   render() {
     return (
       <div className="App">
-        <Nav 
+        <Nav
           className="headerContents"
           isLoggedIn={this.state.isLoggedIn}
           email={this.state.email}
@@ -135,7 +139,7 @@ class App extends Component {
                 )
               } else {
                 return (
-                  <HomeContainer />
+                  <HomeContainer/>
                 )
               };
             }}
@@ -143,6 +147,7 @@ class App extends Component {
           <Route
             exact path="/profile"
             render={() => {
+
               if(this.state.isLoggedIn){
                 return(
                   <UserContainer 
@@ -151,11 +156,12 @@ class App extends Component {
                 )
               } else {
                 return <Redirect to="/" />;
-              };
+              }
             }}
           />
+
           <Route exact path="/cities"
-            render={() => {
+            render={()=>{
               if(this.state.isLoggedIn){
                 return(
                   <CityContainer/>
@@ -166,7 +172,7 @@ class App extends Component {
                 )
               };
             }}
-          />
+            />
         </Switch>
       </div>
     );

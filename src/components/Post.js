@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PostDetail from './PostDetail';
 
 class Post extends Component {
   showPost = (event) => {
@@ -8,7 +9,7 @@ class Post extends Component {
   render() {
     return (
       <li data-posts-index={this.props.post.id}>
-        <button onClick={this.showPost}>{this.props.post.postTitle}</button>
+        <PostDetail />
       </li>
     );
   }

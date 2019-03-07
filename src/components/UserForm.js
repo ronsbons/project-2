@@ -3,15 +3,16 @@ import React, { Component } from 'react';
 class UserForm extends Component {
   state={
     user: {
-      userCity: '',
-      userFullName: '',
+      userFullName: "",
+      userCity: ""
     }
   }
 
   componentDidMount() {
+    console.log('USER');
     console.log(this.props.user);
     this.setState({
-      user: this.props.user
+        user: this.props.user
     });
   }
 
@@ -42,18 +43,18 @@ class UserForm extends Component {
       <div>
         <form onSubmit={this.onFormSubmit}>
           <input 
-            name="userFullName"
-            onChange={this.onInputChange}
-            type="text"
-            placeholder="Name"
-            // value={(this.state.user.userFullName) || ""}
+          name="userFullName"
+          onChange={this.onInputChange}
+          type="text"
+          placeholder="Name"
+          value={(this.state.user.userFullName) || ""}
           />
           <input 
-            name="userCity"
-            onChange={this.onInputChange}
-            type="text"
-            placeholder="Current City"
-            // value={(this.state.user.userCity) || ""}
+          name="userCity"
+          onChange={this.onInputChange}
+          type="text"
+          placeholder="Current City"
+          value={(this.state.user.userCity) || ""}
           />
           <button type="submit">Change</button>
         </form>
