@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import UserAuth from './UserAuth/UserAuth';
+import {Link} from 'react-router-dom';
 import "./NavBar.css"
 
 
@@ -10,6 +11,7 @@ class NavBar extends Component {
         let navBarItems = [];
         if(this.props.isLoggedIn){
             navBarItems.push(
+                <div>
                 <li>
                 <button
                     className="logOutBtn"
@@ -18,6 +20,17 @@ class NavBar extends Component {
                 </button>
                 </li>
 
+                <li>
+                   <Link to="/cities">
+                    Cities
+                    </Link>  
+                </li>
+
+                <li>
+                <Link to="/profile">
+                Profile</Link> 
+                </li>
+                </div>
             );
         } else{
             navBarItems.push(
