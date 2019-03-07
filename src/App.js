@@ -15,22 +15,29 @@ class App extends Component {
   state = {
     isLoggedIn: false,
     email:'',
-    user:'',
+    user: '',
     password:'',
     loginMessage:'',
     signupMessage:''
   }
 
+  // [] THIS DOESN'T RUN UNLESS I REFRESH THE PAGE
+  // UPON LOGIN, HOMECONTAINER COMPONENT SHOULD RENDER IN LOCALHOST:3000, SO THEN THIS SHOULD RUN
+  // [] BUT UPON LOGIN, HOMECONTAINER COMPONENT DOESN'T RENDER, I'M STILL ON LANDING PAGE
   componentDidMount() {
-    console.log(localStorage)
-    if (localStorage.token) {
+    this.verify()
+  };
+
+
+  verify = () => {
+    console.log('verify')
+    if(localStorage.token) {
       axios({
         method: 'GET',
-        url: 'http://localhost:3002/user',
+        url: 'http://localhost:3001/user',
         headers: {authorization: `Bearer ${localStorage.token}`},
       }).then( (response) => {
         console.log(response.data);
-        // [] WALK-IT-OUT SETS USER STATE, IS THIS NEEDED HERE?
         this.setState({
           isLoggedIn:true,
           user: response.data,
@@ -48,24 +55,24 @@ class App extends Component {
   handleInput = (event) => {
     this.setState({
       [event.target.name]: event.target.value
-    })
-    console.log(event.target.value);
-  }
+    });
+  };
 
   // Handle user signup/login input
   handleLogin = (event) => {
       event.preventDefault();
-      axios.post('http://localhost:3002/user/login',{
+      axios.post('http://localhost:3001/user/login',{
           email:this.state.email,
           password:this.state.password
       })
       .then( response => {
-          localStorage.token=response.data.signedJwt
-          this.setState({
-              isLoggedIn:true,
-              user: response.data.user
-          })
-          //redirect
+        // debugger;
+        localStorage.token = response.data.signedJwt
+        this.setState({
+            isLoggedIn: true,
+            user: response.data.user
+        })
+        this.verify()
       })
       .catch(response => {
         this.setState({
@@ -77,17 +84,19 @@ class App extends Component {
   // Handles user signup 
   handleSignup = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3002/user/signup', {
-        email: this.state.email,
-        password: this.state.password
-    }).then( response => {
-      localStorage.token=response.data.signedJwt
-      this.setState({
-          isLoggedIn:true,
-          user: response.data.user
-      })
+    axios.post('http://localhost:3001/user/signup',{
+        email:this.state.email,
+        password:this.state.password
     })
-    .catch(response =>{
+    .then( response => {
+        localStorage.token = response.data.signedJwt
+        this.setState({
+            isLoggedIn: true,
+            user: response.data.user
+        })
+        this.verify()
+    })
+    .catch( error => {
       this.setState({
         signupMessage:'Email address already exists'
       })
