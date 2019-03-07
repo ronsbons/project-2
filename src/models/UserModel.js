@@ -11,12 +11,6 @@ class UserModel {
     return request;
   }
   
-  static update = (user) => {
-    let query = qs.stringify(user);
-    console.log('query', query);
-    let request = axios.put(`${endPoint}/${users._id}`, query);
-    return request;
-  }
 
 }
 
