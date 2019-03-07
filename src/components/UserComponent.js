@@ -6,7 +6,7 @@ class UserComponent extends Component {
             <div>
                 <h3>{this.props.user._id}</h3>
                 <h3>{this.props.user.userPhoto}</h3>
-                <h3>{this.props.user.userFullName}</h3>
+                <h3>{this.props.user.userEmail}</h3>
                 <h3>{this.props.user.userCity}</h3>
                 <h3>{this.props.user.userJoinDate}</h3>
             </div>

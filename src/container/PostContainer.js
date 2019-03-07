@@ -6,7 +6,8 @@ import PostDetail from "../components/PostDetail";
 class PostContainer extends Component {
   state = {
     posts: [],
-    post: null
+    post: null,
+    userId: this.props.user._id
   };
 
   componentDidMount() {
@@ -14,14 +15,18 @@ class PostContainer extends Component {
   }
 
   fetchData() {
-    PostsModel.allPosts().then(res => {
+    PostsModel.allUserPosts(this.state.userId).then(res => {
       console.log(res);
       this.setState({
         posts: res.data,
         post: res.data[0]
       });
+      console.log(this.state.posts);
+      console.log(this.state.post);
+    }).catch( (error) => {
+      console.log('retrieving user posts error: ', error);
     });
-  }
+  };
 
   render() {
     if (this.state.post === null) {
@@ -32,7 +37,7 @@ class PostContainer extends Component {
       return (
         <div className="postsConstainer">
           <h2>This is a post container</h2>
-          <PostList posts={this.state.posts} />
+          {/* <PostList posts={this.state.posts} /> */}
           <PostDetail post={this.state.post} />
         </div>
       );

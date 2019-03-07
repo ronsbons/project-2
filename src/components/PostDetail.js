@@ -27,14 +27,14 @@ handleClose = () => {
         >
           Edit 
         </button>
-        <Modal
-        open={this.state.open}
-        onClose={this.handleClose}
-        >
+        {/* <Modal */}
+      
           <h1>{this.props.post.postTitle}</h1>
-          <h2>{this.props.post.user.userEmail}</h2>
-          <p>{this.props.post.postContent}</p> */}
-        </Modal>
+          <h2>{this.props.post.user}</h2>
+          <p>{this.props.post.postContent}</p> 
+          
+           Hi
+       {/* </Modal>  */}
       </div>
     );
   }

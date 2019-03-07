@@ -6,28 +6,8 @@ import PostContainer from "./PostContainer";
 
 class UserContainer extends Component {
     state = {
-        user: {
-            userPhoto: '',
-            userFullName: '',
-            userCity: '',
-            userJoinDate: ''
-        }
-
-    }
-
-    componentDidMount() {
-        this.fetchData();
-    }
-
-    fetchData = () => {
-        console.log('triggered fetch')
-        UserModel.allUsers().then((res) => {
-            console.log(res)
-            this.setState({user: res.data[0]});
-        }).catch((err)=>{
-            console.log(err)
-        })
-    }
+        user: this.props.user,
+    };
 
     updateUser = (userBody, userId)  => {
       function isUpdated(user) {
@@ -47,7 +27,7 @@ class UserContainer extends Component {
        <UserComponent user={this.state.user} />
        {/* <UserComponent user={this.state.user} {/*updateUser={this.updateUser}/> */}
        <UserForm user={this.state.user} updateUser={this.updateUser} />
-        <PostContainer />
+        <PostContainer user={this.props.user}/>
       </div>
     );
   }
