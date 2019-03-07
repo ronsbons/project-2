@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class UpdateUserForm extends Component {
+class UserForm extends Component {
   state={
     user: {
       userFullName: "",
@@ -17,22 +17,26 @@ class UpdateUserForm extends Component {
   }
 
   onInputChange = (event) => {
+    event.preventDefault();
     let user = this.state.user;
     user[event.target.name] = event.target.value;
-
     this.setState({
       user: user
     });
-
-    console.log(this.state.user)
-  }
+    console.log(this.state.user);
+  };
 
   onFormSubmit = (event) => {
     event.preventDefault()
-    let user = this.state.user
-    this.props.updateUser(user, '5c80599dd1a625547d631928')
-    user = ""
-  }
+    let user = this.state.user;
+    this.props.updateUser(this.props.user._id, user)
+    this.setState({
+      user: {
+        userCity: '',
+        userFullName: '',
+      },
+    });
+  };
 
   render() {
     return (
@@ -59,4 +63,4 @@ class UpdateUserForm extends Component {
   }
 }
 
-export default UpdateUserForm;
+export default UserForm;

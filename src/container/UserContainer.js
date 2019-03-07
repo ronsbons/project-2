@@ -1,33 +1,23 @@
 import React, { Component } from 'react';
-import UserModel from '../models/UserModel.js';
 import UserComponent from '../components/UserComponent';
 import UserForm from '../components/UserForm';
 import PostContainer from "./PostContainer";
+import UserModel from '../models/UserModel';
 
 class UserContainer extends Component {
-    state = {
-        user: {
-            userPhoto: '',
-            userFullName: '',
-            userCity: '',
-            userJoinDate: ''
-        }
+  state = {
+    user: this.props.user,
+  };
 
-    }
-
-    componentDidMount() {
-        this.fetchData();
-    }
-
-    fetchData = () => {
-        console.log('triggered fetch')
-        UserModel.allUsers().then((res) => {
-            console.log(res)
-            this.setState({user: res.data[0]});
-        }).catch((err)=>{
-            console.log(err)
-        })
-    }
+  updateUser = (userId, userBody) => {
+    UserModel.update(userId, userBody).then( (response) => {
+      console.log(response.data);
+      let user = response.data;
+      this.setState({
+        user: user,
+      });
+    });
+  };
 
     updateUser = (userBody, userId)  => {
       function isUpdated(user) {
@@ -41,7 +31,6 @@ class UserContainer extends Component {
     }
 
   render() {
-
     return (
       <div className="userContainer">
        <UserComponent user={this.state.user} />

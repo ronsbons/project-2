@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import Nav from "./components/NavBar";
 import HomeContainer from './container/HomeContainer';
-import UserContainer from './container/UserContainer';
+import UserContainer from './container/UserContainer.js';
+import CityContainer from './container/CityContainer.js';
 import {
   Route,
   Switch,
   Redirect,
-  withRouter
 } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
@@ -22,9 +22,6 @@ class App extends Component {
     signupMessage: ""
   };
 
-  // [] THIS DOESN'T RUN UNLESS I REFRESH THE PAGE
-  // UPON LOGIN, HOMECONTAINER COMPONENT SHOULD RENDER IN LOCALHOST:3000, SO THEN THIS SHOULD RUN
-  // [] BUT UPON LOGIN, HOMECONTAINER COMPONENT DOESN'T RENDER, I'M STILL ON LANDING PAGE
   componentDidMount() {
     this.verify();
   }
@@ -77,7 +74,7 @@ class App extends Component {
         });
         this.verify();
       })
-      .catch(response => {
+      .catch( error => {
         this.setState({
           loginMessage: "Email/Password incorrect"
         });
@@ -134,30 +131,27 @@ class App extends Component {
         />
         <Switch>
           <Route
-            exact
-            path="/"
+            exact path="/"
             render={() => {
               if(this.state.isLoggedIn){
                 return(
                   <Redirect to="/profile" />
                 )
-              }else {
+              } else {
                 return (
                   <HomeContainer/>
                 )
-              }
+              };
             }}
           />
-
           <Route
-            exact
-            path="/profile"
+            exact path="/profile"
             render={() => {
 
               if(this.state.isLoggedIn){
                 return(
-                  < UserContainer 
-                  user={this.state.user}
+                  <UserContainer 
+                    user={this.state.user}
                   />
                 )
               } else {
@@ -172,19 +166,17 @@ class App extends Component {
                 return(
                   <CityContainer/>
                 )
-              }else{
+              } else {
                 return(
                   <Redirect to='/'/>
                 )
-              }
+              };
             }}
             />
-
-         
         </Switch>
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;
