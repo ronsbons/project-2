@@ -7,7 +7,8 @@ class CityList extends Component {
       return (
         <City 
           key={city._id} 
-          city={city} />
+          city={city}
+          user={this.props.user} />
       )
     });
 

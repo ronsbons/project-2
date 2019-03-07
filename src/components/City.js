@@ -18,7 +18,7 @@ class City extends Component {
       <div>
         <h5>City component</h5>
         <a href="#" onClick={this.changeCity}>{this.props.city.cityName}</a>
-        <CityPage city={this.state.city} />
+        <CityPage city={this.state.city} user={this.props.user} />
       </div>
     );
   }

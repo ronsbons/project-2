@@ -22,9 +22,7 @@ class CityContainer extends Component {
     return(
       <div>
         CityContainer
-        <CityList cities={this.state.cities} />
-        {/* [] MAY HAVE TO MOVE CITYPAGE COMPONENT INSIDE CITYLIST, BECAUSE A CLICK ON A CITY NAME WILL HAVE TO CHANGE THE STATE OF CITYPAGE TO SHOW THE CITY THAT WAS CLICKED ON. */}
-        <CityPage />
+        <CityList cities={this.state.cities} user={this.props.user} />
       </div>
     )
   }
