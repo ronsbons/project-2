@@ -19,14 +19,14 @@ class UserContainer extends Component {
     });
   };
 
-    updateUser = (userBody, userId)  => {
-      function isUpdated(user) {
-        return user._id === userId;
-      }
+    updateUser = (userId, userBody)  => {
       UserModel.update(userId, userBody).then((res) => {
         let user = this.state.user
         //user.find(isUpdated).body = userBody.body
-        this.setState({user:user})
+        console.log(res);
+        this.setState({
+          user: res.data,
+        })
       })
     }
 
@@ -36,7 +36,7 @@ class UserContainer extends Component {
        <UserComponent user={this.state.user} />
        {/* <UserComponent user={this.state.user} {/*updateUser={this.updateUser}/> */}
        <UserForm user={this.state.user} updateUser={this.updateUser} />
-        <PostContainer />
+        {/* <PostContainer /> */}
       </div>
     );
   }

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-  state={
-    user: {
-      userFullName: "",
-      userCity: ""
-    }
+  state = {
+    user: {},
   }
 
   componentDidMount() {
@@ -26,6 +23,7 @@ class UserForm extends Component {
     console.log(this.state.user);
   };
 
+  // [] FORM UPDATE WILL CLEAR ONE OR THE OTHER ON SUBMIT IF ONLY ONE HAS INPUT
   onFormSubmit = (event) => {
     event.preventDefault()
     let user = this.state.user;

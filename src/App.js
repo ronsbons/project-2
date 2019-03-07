@@ -10,7 +10,6 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-import CityContainer from './container/CityContainer';
 
 class App extends Component {
   state = {
