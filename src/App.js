@@ -74,7 +74,7 @@ class App extends Component {
         })
         this.verify()
       })
-      .catch(response => {
+      .catch( error => {
         this.setState({
           loginMessage:'Email/Password incorrect'
         })
