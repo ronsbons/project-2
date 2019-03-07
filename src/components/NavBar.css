@@ -1,0 +1,17 @@
+#navBarItems {
+    background:wheat;
+    
+}
+
+Nav {
+    line-height: 58px;
+    /* border: 2px solid black; */
+}
+
+#loginBtn {
+    background:teal;
+    line-height: 55px;
+    border: 3px solid gold;
+}
+
+
