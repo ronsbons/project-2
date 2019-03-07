@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 
 class CreatePostForm extends Component {
   state = {
+    city: '',
+    user: this.props.user._id,
     postTitle: '',
     postContent: '',
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
+    
   };
 
   handleInput = (event) => {
@@ -17,11 +17,38 @@ class CreatePostForm extends Component {
     })
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    let post = {
+      city: {
+        cityName: this.state.city,
+      },
+      user: this.state.user,
+      postTitle: this.state.postTitle,
+      postContent: this.state.postContent,
+    };
+
+    this.props.createPost(post);
+    this.setState({
+      city: '',
+      user: this.props.user._id,
+      postTitle: '',
+      postContent: '',
+    });
+  };
+
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="postTitle" maxLength="200" placeholder="Title" onChange={this.handleInput} />
+          <h3>Create a New Post</h3>
+          <select name="city" onChange={this.handleInput}>
+            <option value="San Francisco">San Francisco</option>
+            <option value="London">London</option>
+            <option value="Gibraltar">Gibraltar</option>
+          </select>
+          <label for="title">Title</label>
+          <input type="text" id="title" name="postTitle" maxLength="200" placeholder="Title" onChange={this.handleInput} />
           <textarea name="postContent" required placeholder="Type your post here"></textarea>
           <button>Submit</button>
         </form>
