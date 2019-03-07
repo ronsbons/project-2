@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import Nav from "./components/NavBar";
-import HomeContainer from "./container/HomeContainer";
-import MainContainer from "./container/MainContainer.js";
-import { Route, Switch, Redirect, withRouter } from "react-router-dom";
-import axios from "axios";
-import "./App.css";
-import UserContainer from "./container/UserContainer";
+import HomeContainer from './container/HomeContainer';
+import UserContainer from './container/UserContainer';
+import {
+  Route,
+  Switch,
+  Redirect,
+  withRouter
+} from 'react-router-dom';
+import axios from 'axios';
+import './App.css';
+import CityContainer from './container/CityContainer';
 
 class App extends Component {
   state = {
@@ -132,10 +137,14 @@ class App extends Component {
             exact
             path="/"
             render={() => {
-              if (this.state.isLoggedIn) {
-                return <Redirect to="/profile" />;
-              } else {
-                return <HomeContainer isLoggedIn={this.state.isLoggedIn} />;
+              if(this.state.isLoggedIn){
+                return(
+                  <Redirect to="/profile" />
+                )
+              }else {
+                return (
+                  <HomeContainer/>
+                )
               }
             }}
           />
@@ -144,20 +153,34 @@ class App extends Component {
             exact
             path="/profile"
             render={() => {
-              if (this.state.isLoggedIn) {
-                return <UserContainer user={this.state.user} />;
+
+              if(this.state.isLoggedIn){
+                return(
+                  < UserContainer 
+                  user={this.state.user}
+                  />
+                )
               } else {
                 return <Redirect to="/" />;
               }
             }}
           />
 
-          <Route
-            path="/main"
-            render={() => {
-              return <MainContainer isLoggedIn={this.state.isLoggedIn} />;
+          <Route exact path="/cities"
+            render={()=>{
+              if(this.state.isLoggedIn){
+                return(
+                  <CityContainer/>
+                )
+              }else{
+                return(
+                  <Redirect to='/'/>
+                )
+              }
             }}
-          />
+            />
+
+         
         </Switch>
       </div>
     );
