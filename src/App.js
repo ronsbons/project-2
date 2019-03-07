@@ -21,9 +21,6 @@ class App extends Component {
     signupMessage:''
   }
 
-  // [] THIS DOESN'T RUN UNLESS I REFRESH THE PAGE
-  // UPON LOGIN, HOMECONTAINER COMPONENT SHOULD RENDER IN LOCALHOST:3000, SO THEN THIS SHOULD RUN
-  // [] BUT UPON LOGIN, HOMECONTAINER COMPONENT DOESN'T RENDER, I'M STILL ON LANDING PAGE
   componentDidMount() {
     this.verify()
   };
@@ -112,9 +109,6 @@ class App extends Component {
      })
      localStorage.clear();
   }
-
-
-
   
   render() {
     return (
