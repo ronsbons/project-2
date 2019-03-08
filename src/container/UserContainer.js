@@ -5,7 +5,6 @@ import PostContainer from "./PostContainer";
 import UserModel from '../models/UserModel';
 
 class UserContainer extends Component {
-<<<<<<< HEAD
   state = {
     user: this.props.user,
   };
@@ -19,27 +18,10 @@ class UserContainer extends Component {
       });
     });
   };
-=======
-    state = {
-        user: this.props.user,
-    };
-
-    updateUser = (userId, userBody)  => {
-      UserModel.update(userId, userBody).then((res) => {
-        let user = res.data
-        this.setState({user:user})
-      })
-    }
->>>>>>> Jon
 
   render() {
     return (
       <div className="userContainer">
-<<<<<<< HEAD
-       <UserComponent user={this.state.user} />
-       <UserForm user={this.state.user} updateUser={this.updateUser} />
-        <PostContainer user={this.state.user} />
-=======
        <UserComponent 
        className="userComponent"
        user={this.state.user} 
@@ -49,7 +31,6 @@ class UserContainer extends Component {
         className="postContainer"
         user={this.props.user}
         />
->>>>>>> Jon
       </div>
     );
   }

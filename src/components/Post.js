@@ -2,17 +2,6 @@ import React, { Component } from "react";
 import PostDetail from "./PostDetail";
 
 class Post extends Component {
-<<<<<<< HEAD
-  showPost = event => {
-    event.preventDefault();
-  };
-
-  render() {
-    return (
-      <li data-posts-index={this.props.post.id}>
-        <a href="#">{this.props.post.postTitle}</a>
-        <PostDetail post={this.props.post} />
-=======
 
   deleteUserPost = (event) => {
     event.preventDefault();
@@ -33,7 +22,6 @@ class Post extends Component {
 
           </div>
           <PostDetail post={this.props.post}/>
->>>>>>> Jon
       </li>
     );
   }

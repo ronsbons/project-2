@@ -54,7 +54,7 @@ class UserAuth extends Component{
 
                   <Modal.Header>Please Signup/Login</Modal.Header>
                   <Modal.Content >
-                    <h4>Login</h4>
+                    <h4>Sign Up</h4>
                       <form
                       onSubmit={handleSignup}
                       >

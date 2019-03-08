@@ -1,14 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-
-class PostDetail extends Component {
-  render() {
-    return (
-      <div>
-        <h1>{this.props.post.postTitle}</h1>
-        <h2>{this.props.post.user.userEmail}</h2>
-        <p>{this.props.post.postContent}</p>
-=======
 import { Button, Header, Image, Modal } from 'semantic-ui-react';
 
  
@@ -42,17 +32,15 @@ class PostDetail extends Component {
           <Header>{this.props.post.postTitle}</Header>
           <p>{this.props.post.postContent}</p>
           <span>{this.props.post.user}</span>
->>>>>>> Jon
       </div>
 
         <div>
               <a
-              href="#editPost"
-              onClick={this.toggleBodyForm}
-              >
+              href="#editPost"              >
                 Edit
               </a>
         </div>
+        
       </Modal.Description>
     </Modal.Content>
   </Modal>
