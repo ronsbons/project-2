@@ -45,14 +45,14 @@ class UserForm extends Component {
           onChange={this.onInputChange}
           type="text"
           placeholder="Name"
-          value={(this.state.user.userFullName) || ""}
+          // value={(this.state.user.userFullName) || ""}
           />
           <input 
           name="userCity"
           onChange={this.onInputChange}
           type="text"
           placeholder="Current City"
-          value={(this.state.user.userCity) || ""}
+          // value={(this.state.user.userCity) || ""}
           />
           <button type="submit">Change</button>
         </form>
