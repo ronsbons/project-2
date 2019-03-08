@@ -7,7 +7,7 @@ class PostContainer extends Component {
   state = {
     userId: this.props.user._id,
     posts: [],
-    post: null,
+    post: null
   };
 
   componentDidMount() {
@@ -16,26 +16,26 @@ class PostContainer extends Component {
 
   // [] NEED TO REVISE THIS AXIOS CALL TO JUST GET POSTS USING THE USERID
   fetchData() {
-    PostsModel.allPosts().then(res => {
+    PostsModel.getUserPosts(this.state.userId).then(res => {
       console.log(res);
       this.setState({
         posts: res.data,
         post: res.data[0]
       });
+      console.log(this.state.posts);
+      console.log(this.state.post);
     });
   }
 
   render() {
     if (this.state.post === null) {
-      return (
-        <div className="postsConstainer" />
-      )
+      return <div className="postsConstainer" />;
     } else {
       return (
         <div className="postsConstainer">
           <h2>This is a post container</h2>
           <PostList posts={this.state.posts} />
-          <PostDetail post={this.state.post} />
+          {/* <PostDetail post={this.state.post} /> */}
         </div>
       );
     }
