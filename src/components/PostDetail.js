@@ -13,8 +13,8 @@ class PostDetail extends Component {
       <Image wrapped size='medium' src='https://www.aaronstoychest.co.uk/wp-content/uploads/2017/09/59754444.jpg' />
       <Modal.Description>
         <Header>{this.props.post.postTitle}</Header>
-        <h2>{this.props.posts.user}</h2>
-        <p>{this.props.posts.postContent}</p>
+        <h2>{this.props.post.user}</h2>
+        <p>{this.props.post.postContent}</p>
       </Modal.Description>
     </Modal.Content>
   </Modal>

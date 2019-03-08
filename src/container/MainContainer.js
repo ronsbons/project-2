@@ -4,6 +4,9 @@ import UserContainer from './UserContainer';
 
 
 class MainContainer extends Component {
+  state= {
+    user: this.props.user
+  }
   render(){
     return(
       <div>

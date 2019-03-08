@@ -143,7 +143,9 @@ class App extends Component {
                 )
               }else {
                 return (
-                  <HomeContainer/>
+                  <HomeContainer
+                  user={this.state.user}
+                  />
                 )
               }
             }}

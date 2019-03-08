@@ -4,8 +4,8 @@ import PostDetail from './PostDetail';
 class Post extends Component {
   render() {
     return (
-      <li data-posts-index={this.props.post.id}>
-        <PostDetail />
+      <li key={this.props.post.id}>
+        <PostDetail post={this.props.post}/>
       </li>
     );
   }

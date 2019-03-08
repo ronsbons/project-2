@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PostsModel from "../models/PostsModel";
 import PostList from "../components/PostList";
-import PostDetail from "../components/PostDetail";
 
 class PostContainer extends Component {
   state = {
@@ -37,8 +36,7 @@ class PostContainer extends Component {
       return (
         <div className="postsConstainer">
           <h2>This is a post container</h2>
-          {/* <PostList posts={this.state.posts} /> */}
-          <PostDetail post={this.state.post} />
+          <PostList posts={this.state.posts} />
         </div>
       );
     }
