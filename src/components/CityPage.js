@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CityPostContainer from "../container/CityPostContainer";
 import CreatePostForm from "./CreatePostForm";
-import PostsModel from '../models/PostsModel.js';
+import CityPostsModel from '../models/CityPostsModel.js';
 import Axios from "axios";
 
 class CityPage extends Component {
@@ -10,22 +10,23 @@ class CityPage extends Component {
     post: null,
   };
 
-  // componentDidMount() {
-  //   this.fetchData();
-  // }
+  componentDidMount() {
+    console.log(`CityPage mounted`);
+    this.fetchData();
+  }
 
-  // // [] NEED TO REVISE THIS AXIOS CALL TO JUST GET POSTS USING THE CITYID
-  // fetchData() {
-  //   PostsModel.getUserPosts(this.state.userId).then(res => {
-  //     console.log(res);
-  //     this.setState({
-  //       posts: res.data,
-  //       post: res.data[0]
-  //     });
-  //     console.log(this.state.posts);
-  //     console.log(this.state.post);
-  //   });
-  // }
+  fetchData() {
+    console.log(`CityPage fetching data`);
+    CityPostsModel.getCityPosts(this.props.city._id).then(res => {
+      console.log(res);
+      this.setState({
+        posts: res.data,
+        post: res.data[0]
+      });
+      console.log(this.state.posts);
+      console.log(this.state.post);
+    });
+  }
 
   createPost = post => {
     let newPost = post;
@@ -64,7 +65,7 @@ class CityPage extends Component {
             alt="Golden Gate Bridge at dusk"
           />
         </p>
-        {/* <CityPostContainer city={this.props.city} user={this.props.user} posts={this.state.posts} /> */}
+        <CityPostContainer city={this.props.city} user={this.props.user} posts={this.state.posts} post={this.state.post} />
         <CreatePostForm city={this.props.city} user={this.props.user} createPost={this.createPost} />
       </div>
     );
