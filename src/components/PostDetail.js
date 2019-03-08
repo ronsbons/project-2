@@ -4,6 +4,20 @@ import { Button, Header, Image, Modal } from 'semantic-ui-react';
  
 
 class PostDetail extends Component {
+  state = {
+
+      formStyle : {display: 'none'},
+      bodyStyle : {},
+  
+  }
+
+  toggleBodyForm = () => {
+    (this.state.formStyle.display === 'block')?
+      this.setState({formStyle: {display: 'none'}, bodyStyle: {display:'block'} })
+    :
+      this.setState({formStyle: {display:'block'}, bodyStyle: {display: 'none'}})
+    
+  }
 
   render() {
     return (
@@ -15,15 +29,12 @@ class PostDetail extends Component {
         <Header>{this.props.post.postTitle}</Header>
         <p>{this.props.post.postContent}</p>
         <span>{this.props.post.user}</span>
+        
         <div>
-        <a
-              href="#removePost"
-              className="remove"
-              onClick={this.deleteUserPost}
+              <a
+              href="#editPost"
+
               >
-              Remove
-              </a>
-              <a>
                 Edit
               </a>
         </div>

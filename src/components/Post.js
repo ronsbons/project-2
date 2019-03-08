@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import PostDetail from './PostDetail';
 
 class Post extends Component {
+
   deleteUserPost = (event) => {
     event.preventDefault();
     this.props.deletePost(this.props.post)
   }
   render() {
     return (
-      <li key={this.props.post.id}>
+      <li data-posts-index={this.props.post.id}>
           <div>
               <span>{this.props.post.postTitle}</span>
               <a

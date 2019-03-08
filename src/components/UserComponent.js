@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import UserForm from "./UserForm";
 class UserComponent extends Component {
     render() {
         return (
@@ -10,6 +10,7 @@ class UserComponent extends Component {
                 <h3>{this.props.user.userEmail}</h3>
                 <h3>{this.props.user.userCity}</h3>
                 <h3>{this.props.user.userJoinDate}</h3>
+                <UserForm />
             </div>
         );
     }
