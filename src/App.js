@@ -115,7 +115,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App container">
         <Nav
           className="headerContents"
           isLoggedIn={this.state.isLoggedIn}
