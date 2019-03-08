@@ -29,10 +29,10 @@ class PostContainer extends Component {
 
   render() {
     if (this.state.post === null) {
-      return <div className="postsConstainer" />;
+      return <div className="postsContainer" />;
     } else {
       return (
-        <div className="postsConstainer">
+        <div className="postsContainer">
           <h2>This is a post container</h2>
           <PostList posts={this.state.posts} />
           {/* <PostDetail post={this.state.post} /> */}

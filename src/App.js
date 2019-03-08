@@ -163,7 +163,7 @@ class App extends Component {
             render={()=>{
               if(this.state.isLoggedIn){
                 return(
-                  <CityContainer/>
+                  <CityContainer user={this.state.user} />
                 )
               } else {
                 return(
