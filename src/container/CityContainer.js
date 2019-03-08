@@ -10,8 +10,9 @@ class CityContainer extends Component {
   componentDidMount() {
     CityModel.allCities().then( (response) => {
       this.setState({
-        cities: response.data.cities,
+        cities: response.data,
       });
+      console.log(this.state.cities);
     }).catch( (error) => {
       console.log('retrieiving all cities error: ', error);
     });
