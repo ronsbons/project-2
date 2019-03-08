@@ -3,7 +3,7 @@ import CityPage from './CityPage.js';
 
 class City extends Component {
   state = {
-    city: 'San Francisco',
+    city: this.props.city,
   };
 
   changeCity = (event) => {
@@ -18,6 +18,7 @@ class City extends Component {
     return (
       <div>
         <h5>City component</h5>
+        <p>{this.state.city.cityName}</p>
         <button onClick={this.changeCity}>{this.props.city.cityName}</button>
         <CityPage city={this.state.city} user={this.props.user} />
       </div>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const endPoint = 'http://localhost:3000/api/cities';
+const endPoint = 'http://localhost:3001/api/cities';
 
 class CityModel {
   static allCities() {
