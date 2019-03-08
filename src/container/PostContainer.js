@@ -31,6 +31,7 @@ class PostContainer extends Component {
   deletePost = (post) => {
     PostsModel.deleteUserPosts(post).then((res) => {
       let posts = this.state.posts.filter(function(post) {
+        
         return post._id !== res.data._id
       });
       this.setState({ posts });

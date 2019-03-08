@@ -9,13 +9,9 @@ class UserContainer extends Component {
         user: this.props.user,
     };
 
-    updateUser = (userBody, userId)  => {
-      function isUpdated(user) {
-        return user._id === userId;
-      }
+    updateUser = (userId, userBody)  => {
       UserModel.update(userId, userBody).then((res) => {
-        let user = this.state.user
-        //user.find(isUpdated).body = userBody.body
+        let user = res.data
         this.setState({user:user})
       })
     }
@@ -26,8 +22,9 @@ class UserContainer extends Component {
       <div className="userContainer">
        <UserComponent 
        className="userComponent"
-       user={this.state.user} />
-       {/* <UserForm user={this.state.user} updateUser={this.updateUser} /> */}
+       user={this.state.user} 
+       updateUser={this.updateUser}
+       />
         <PostContainer 
         className="postContainer"
         user={this.props.user}

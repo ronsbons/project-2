@@ -6,7 +6,7 @@ import { Button, Header, Image, Modal } from 'semantic-ui-react';
 class PostDetail extends Component {
   state = {
 
-      formStyle : {display: 'none'},
+      formStyle : {display: 'block'},
       bodyStyle : {},
   
   }
@@ -16,24 +16,28 @@ class PostDetail extends Component {
       this.setState({formStyle: {display: 'none'}, bodyStyle: {display:'block'} })
     :
       this.setState({formStyle: {display:'block'}, bodyStyle: {display: 'none'}})
-    
   }
 
   render() {
     return (
-    <Modal trigger={<a>View</a>}>
+    <Modal 
+    trigger={<a>View</a>}>
     <Modal.Header>City Post</Modal.Header>
     <Modal.Content image>
       <Image wrapped size='medium' src='https://www.aaronstoychest.co.uk/wp-content/uploads/2017/09/59754444.jpg' />
       <Modal.Description>
-        <Header>{this.props.post.postTitle}</Header>
-        <p>{this.props.post.postContent}</p>
-        <span>{this.props.post.user}</span>
-        
+      <div
+      style={this.formStyle}
+      >
+          <Header>{this.props.post.postTitle}</Header>
+          <p>{this.props.post.postContent}</p>
+          <span>{this.props.post.user}</span>
+      </div>
+
         <div>
               <a
               href="#editPost"
-
+              onClick={this.toggleBodyForm}
               >
                 Edit
               </a>

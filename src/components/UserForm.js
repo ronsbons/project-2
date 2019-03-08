@@ -3,10 +3,7 @@ import { Modal, Image, Header } from 'semantic-ui-react';
 
 class UpdateUserForm extends Component {
   state={
-    user: {
-      userFullName: "",
-      userCity: ""
-    }
+    user: {}
   }
 
   componentDidMount() {
@@ -17,23 +14,28 @@ class UpdateUserForm extends Component {
     });
   }
 
-  // onInputChange = (event) => {
-  //   let user = this.state.user;
-  //   user[event.target.name] = event.target.value;
+  onInputChange = (event) => {
+    let user = this.state.user;
+    user[event.target.name] = event.target.value;
 
-  //   this.setState({
-  //     user: user
-  //   });
+    this.setState({
+      user: user
+    });
 
-  //   console.log(this.state.user)
-  // }
+    console.log(this.state.user)
+  }
 
-  // onFormSubmit = (event) => {
-  //   event.preventDefault()
-  //   let user = this.state.user
-  //   this.props.updateUser(user, '5c80599dd1a625547d631928')
-  //   user = ""
-  // }
+  onFormSubmit = (event) => {
+    event.preventDefault()
+    let user = this.state.user
+    this.props.updateUser(this.props.user._id,user)
+    this.setState({
+      user:{
+        userCity:'',
+        userFullName:''
+      }
+    })
+  }
 
   render() {
     return (
@@ -51,14 +53,14 @@ class UpdateUserForm extends Component {
           onChange={this.onInputChange}
           type="text"
           placeholder="Name"
-          value={"Jon" || ""}
+          value={(this.state.user.userFullName) || ""}
           />
           <input 
           name="userCity"
           onChange={this.onInputChange}
           type="text"
           placeholder="Current City"
-          // value={(this.state.user.userCity) || ""}
+          value={(this.state.user.userCity) || ""}
           />
           <button type="submit">Change</button>
         </form>
