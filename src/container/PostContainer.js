@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PostsModel from "../models/PostsModel";
 import PostList from "../components/PostList";
-import PostDetail from "../components/PostDetail";
 
 class PostContainer extends Component {
   state = {
@@ -14,7 +13,6 @@ class PostContainer extends Component {
     this.fetchData();
   }
 
-  // [] NEED TO REVISE THIS AXIOS CALL TO JUST GET POSTS USING THE USERID
   fetchData() {
     PostsModel.getUserPosts(this.state.userId).then(res => {
       console.log(res);
@@ -35,7 +33,6 @@ class PostContainer extends Component {
         <div className="postsContainer">
           <h2>This is a post container</h2>
           <PostList posts={this.state.posts} />
-          {/* <PostDetail post={this.state.post} /> */}
         </div>
       );
     }

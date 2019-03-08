@@ -27,8 +27,8 @@ class CreatePostForm extends Component {
 
     this.props.createPost(post);
     this.setState({
-      city: "",
-      ////user: this.props.user._id,
+      // city: "",
+      // user: this.props.user._id,
       postTitle: "",
       postContent: ""
     });
