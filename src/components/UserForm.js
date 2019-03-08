@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Modal, Image, Header } from 'semantic-ui-react';
 
 class UserForm extends Component {
   state = {
@@ -38,7 +39,14 @@ class UserForm extends Component {
 
   render() {
     return (
-      <div>
+
+      <Modal trigger={<a href="#userForm">Edit Profile</a>}>
+      <Modal.Header>Profile</Modal.Header>
+      <Modal.Content image>
+        <Image wrapped size='medium' src='http://static.nfl.com/static/content/public/static/img/fantasy/transparent/512x512/BRA371156.png' />
+        <Modal.Description>
+          <Header>UserName</Header>
+          <div>
         <form onSubmit={this.onFormSubmit}>
           <input 
           name="userFullName"
@@ -57,6 +65,11 @@ class UserForm extends Component {
           <button type="submit">Change</button>
         </form>
       </div>
+        </Modal.Description>
+      </Modal.Content>
+    </Modal>
+
+
     );
   }
 }

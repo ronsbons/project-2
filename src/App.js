@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import Nav from "./components/NavBar";
 import HomeContainer from './container/HomeContainer';
-import UserContainer from './container/UserContainer.js';
-import CityContainer from './container/CityContainer.js';
+import UserContainer from './container/UserContainer';
 import {
   Route,
   Switch,
   Redirect,
+  withRouter
 } from 'react-router-dom';
 import axios from 'axios';
-import './App.css';
+import CityContainer from './container/CityContainer';
 
 class App extends Component {
   state = {
@@ -21,6 +21,9 @@ class App extends Component {
     signupMessage: ""
   };
 
+  // [] THIS DOESN'T RUN UNLESS I REFRESH THE PAGE
+  // UPON LOGIN, HOMECONTAINER COMPONENT SHOULD RENDER IN LOCALHOST:3000, SO THEN THIS SHOULD RUN
+  // [] BUT UPON LOGIN, HOMECONTAINER COMPONENT DOESN'T RENDER, I'M STILL ON LANDING PAGE
   componentDidMount() {
     this.verify();
   }
@@ -65,7 +68,6 @@ class App extends Component {
         password: this.state.password
       })
       .then(response => {
-        // debugger;
         localStorage.token = response.data.signedJwt;
         this.setState({
           isLoggedIn: true,
@@ -73,7 +75,7 @@ class App extends Component {
         });
         this.verify();
       })
-      .catch( error => {
+      .catch(response => {
         this.setState({
           loginMessage: "Email/Password incorrect"
         });
@@ -115,7 +117,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App container">
+      <div className="App">
         <Nav
           className="headerContents"
           isLoggedIn={this.state.isLoggedIn}
@@ -130,27 +132,32 @@ class App extends Component {
         />
         <Switch>
           <Route
-            exact path="/"
+            exact
+            path="/"
             render={() => {
               if(this.state.isLoggedIn){
                 return(
                   <Redirect to="/profile" />
                 )
-              } else {
+              }else {
                 return (
-                  <HomeContainer/>
+                  <HomeContainer
+                  user={this.state.user}
+                  />
                 )
-              };
+              }
             }}
           />
+
           <Route
-            exact path="/profile"
+            exact
+            path="/profile"
             render={() => {
 
               if(this.state.isLoggedIn){
                 return(
-                  <UserContainer 
-                    user={this.state.user}
+                  < UserContainer 
+                  user={this.state.user}
                   />
                 )
               } else {
@@ -163,19 +170,21 @@ class App extends Component {
             render={()=>{
               if(this.state.isLoggedIn){
                 return(
-                  <CityContainer user={this.state.user} />
+                  <CityContainer/>
                 )
-              } else {
+              }else{
                 return(
                   <Redirect to='/'/>
                 )
-              };
+              }
             }}
             />
+
+         
         </Switch>
       </div>
     );
-  };
-};
+  }
+}
 
 export default App;

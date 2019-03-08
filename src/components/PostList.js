@@ -7,7 +7,9 @@ class PostList extends Component {
       return (
           <Post 
           key={post._id} 
-          post={post} />
+          post={post}
+          deletePost={this.props.deletePost}
+           />
       )
     });
     return (

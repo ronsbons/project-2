@@ -7,6 +7,15 @@ class PostsModel {
     let request = axios.get(`${endPoint}/${userId}`);
     return request;
   }
+
+  static deleteUserPosts(post) {
+    console.log(post)
+    let request = axios.delete(`${endPoint}/${post._id}`)
+    return request;
+  }
+
 }
+
+
 
 export default PostsModel;
