@@ -1,38 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class CreatePostForm extends Component {
   state = {
-    city: '',
-    user: this.props.user._id,
-    postTitle: '',
-    postContent: '',
-    
+    // city: "",
+    // user: "5c80599dd1a625547d631929" this.props.user._id,
+    postTitle: "",
+    postContent: ""
   };
 
-  handleInput = (event) => {
+  handleInput = event => {
     event.preventDefault();
     this.setState({
-      [event.target.name]: event.target.value,
-    })
+      [event.target.name]: event.target.value
+    });
+    console.log("CreatePostForm State", this.state);
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     let post = {
-      city: {
-        cityName: this.state.city,
-      },
-      user: this.state.user,
+      city: this.props.city._id,
+      user: this.props.user._id,
       postTitle: this.state.postTitle,
-      postContent: this.state.postContent,
+      postContent: this.state.postContent
     };
 
     this.props.createPost(post);
     this.setState({
-      city: '',
-      user: this.props.user._id,
-      postTitle: '',
-      postContent: '',
+      // city: "",
+      // user: this.props.user._id,
+      postTitle: "",
+      postContent: ""
     });
   };
 
@@ -41,14 +39,33 @@ class CreatePostForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <h3>Create a New Post</h3>
-          <select name="city" onChange={this.handleInput}>
-            <option value="San Francisco">San Francisco</option>
-            <option value="London">London</option>
-            <option value="Gibraltar">Gibraltar</option>
-          </select>
-          <label for="title">Title</label>
-          <input type="text" id="title" name="postTitle" maxLength="200" placeholder="Title" onChange={this.handleInput} />
-          <textarea name="postContent" required placeholder="Type your post here"></textarea>
+
+          {/* <label htmlFor="city">City</label> */}
+          {/* <select
+            id="city"
+            name="city"
+            onChange={this.handleInput}
+            style={{ display: "block" }}
+          >
+            <option value="">Choose City</option>
+            <option value="5c80599dd1a625547d631927">Wisconsin</option>
+            <option value="5c80599dd1a625547d631926">Colorado</option>
+          </select> */}
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="postTitle"
+            maxLength="200"
+            placeholder="Title"
+            onChange={this.handleInput}
+          />
+          <textarea
+            name="postContent"
+            required
+            placeholder="Type your post here"
+            onChange={this.handleInput}
+          />
           <button>Submit</button>
         </form>
       </div>

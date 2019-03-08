@@ -115,7 +115,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App container">
         <Nav
           className="headerContents"
           isLoggedIn={this.state.isLoggedIn}
@@ -163,7 +163,7 @@ class App extends Component {
             render={()=>{
               if(this.state.isLoggedIn){
                 return(
-                  <CityContainer/>
+                  <CityContainer user={this.state.user} />
                 )
               } else {
                 return(

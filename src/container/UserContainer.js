@@ -19,17 +19,6 @@ class UserContainer extends Component {
     });
   };
 
-    updateUser = (userId, userBody)  => {
-      UserModel.update(userId, userBody).then((res) => {
-        let user = this.state.user
-        //user.find(isUpdated).body = userBody.body
-        console.log(res);
-        this.setState({
-          user: res.data,
-        })
-      })
-    }
-
   render() {
     return (
       <div className="userContainer">
