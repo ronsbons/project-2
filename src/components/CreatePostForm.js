@@ -50,7 +50,7 @@ class CreatePostForm extends Component {
             <option value="">Choose City</option>
             <option value="5c80599dd1a625547d631927">Wisconsin</option>
             <option value="5c80599dd1a625547d631926">Colorado</option>
-          </select>re
+          </select>
           <label htmlFor="title">Title</label>
           <input
             type="text"
