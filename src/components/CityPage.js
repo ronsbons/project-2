@@ -7,7 +7,6 @@ import Axios from "axios";
 class CityPage extends Component {
   state = {
     posts: [],
-    post: null,
   };
 
   componentDidMount() {
@@ -21,10 +20,8 @@ class CityPage extends Component {
       console.log(res);
       this.setState({
         posts: res.data,
-        post: res.data[0]
       });
       console.log(this.state.posts);
-      console.log(this.state.post);
     });
   }
 
@@ -34,9 +31,9 @@ class CityPage extends Component {
     Axios.post("http://localhost:3001/api/posts", newPost)
       .then(response => {
         let posts = this.state.posts;
-        let newPosts = posts.push(response.data);
+        posts.push(response.data);
         this.setState({
-          posts: newPosts
+          posts: posts,
         });
       })
       .catch(error => {
