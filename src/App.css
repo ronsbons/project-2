@@ -1,4 +1,28 @@
-.headerContents button {
-  display: flex;
-  color: red;
+/* MainContainer */
+.mainContainer{
+  height: 100%;
 }
+/* User Conatiner */
+
+.userContainer {
+  display: flex;
+  width: 100%;
+}
+
+.userComponent {
+  height: 100%;
+  background: green;
+}
+.postsConstainer {
+  height: 100%;
+  background: yellow;
+}
+
+
+/* UserComponent */
+
+#userPhoto {
+  width:20%;
+
+}
+

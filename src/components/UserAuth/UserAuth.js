@@ -14,7 +14,9 @@ class UserAuth extends Component{
         let loginError = this.props.loginMessage
 
         return(
-                <Modal trigger={<Button>Login/Signup</Button>}>
+                <Modal 
+                className="loginModal"
+                trigger={<Button>Login/Signup</Button>}>
                   <Modal.Header>Please Signup/Login</Modal.Header>
                   <Modal.Content >
                     <h4>Login</h4>
@@ -43,6 +45,7 @@ class UserAuth extends Component{
                          <input
                          type="Submit"
                          value="Login"
+                         className="loginBtn"
                          />
 
                       </form>
@@ -77,6 +80,7 @@ class UserAuth extends Component{
                          <input
                          type="Submit"
                          value="Sign Up"
+                         className="loginBtn"
                          />
 
                       </form>

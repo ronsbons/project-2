@@ -24,9 +24,14 @@ class UserContainer extends Component {
 
     return (
       <div className="userContainer">
-       <UserComponent user={this.state.user} />
-       <UserForm user={this.state.user} updateUser={this.updateUser} />
-        <PostContainer user={this.props.user}/>
+       <UserComponent 
+       className="userComponent"
+       user={this.state.user} />
+       {/* <UserForm user={this.state.user} updateUser={this.updateUser} /> */}
+        <PostContainer 
+        className="postContainer"
+        user={this.props.user}
+        />
       </div>
     );
   }

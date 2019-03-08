@@ -9,8 +9,7 @@ class MainContainer extends Component {
   }
   render(){
     return(
-      <div>
-        <CityContainer />
+      <div className="mainContainer">
         <UserContainer user={this.state.user} updateUserFullName={this.updateUserFullName} />
       </div>
     );

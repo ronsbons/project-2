@@ -13,7 +13,6 @@ import {
     MenuItem,
   } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-import "./NavBar.css"
 
 
 

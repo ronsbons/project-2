@@ -7,14 +7,26 @@ class PostDetail extends Component {
 
   render() {
     return (
-    <Modal trigger={<a>{this.props.post.postContent}</a>}>
+    <Modal trigger={<a>View</a>}>
     <Modal.Header>City Post</Modal.Header>
     <Modal.Content image>
       <Image wrapped size='medium' src='https://www.aaronstoychest.co.uk/wp-content/uploads/2017/09/59754444.jpg' />
       <Modal.Description>
         <Header>{this.props.post.postTitle}</Header>
-        <h2>{this.props.post.user}</h2>
         <p>{this.props.post.postContent}</p>
+        <span>{this.props.post.user}</span>
+        <div>
+        <a
+              href="#removePost"
+              className="remove"
+              onClick={this.deleteUserPost}
+              >
+              Remove
+              </a>
+              <a>
+                Edit
+              </a>
+        </div>
       </Modal.Description>
     </Modal.Content>
   </Modal>

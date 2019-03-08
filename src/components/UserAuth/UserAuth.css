@@ -1,14 +1,14 @@
 
-
-.login {
-    width: 50%;
+#loginModal {
+    display: flex;
+    flex-direction: row;
 }
 
 .signup {
     width: 50%;
 }
 
-#loginBtn {
+.loginBtn {
     color:white;
     background: teal;
 
