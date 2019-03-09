@@ -3,7 +3,7 @@ import PostList from '../components/PostList.js';
 
 class CityPostContainer extends Component {
   render() {
-    if (this.props.post === null) {
+    if (this.props.posts === null) {
       return (
         <div className="city-post-container"></div>
       );
@@ -11,7 +11,7 @@ class CityPostContainer extends Component {
       return (
         <div className="city-post-container">
           <h6>CityPostContainer</h6>
-          <PostList posts={this.props.posts} post={this.props.post} />
+          <PostList posts={this.props.posts} />
         </div>
       )
     };

@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import CityModel from '../models/CityModel.js';
 import CityList from '../components/CityList.js';
+import CityPage from '../components/CityPage.js';
 
 class CityContainer extends Component {
   state = {
-    cities: []
+    cities: [],
+    currentCityId: sessionStorage.getItem('currentCity'),
   };
 
   componentDidMount() {
@@ -20,9 +22,10 @@ class CityContainer extends Component {
 
   render(){
     return(
-      <div>
+      <div className="city-container">
         CityContainer
         <CityList cities={this.state.cities} user={this.props.user} />
+        {/* <CityPage currentCityId={this.state.currentCityId} /> */}
       </div>
     )
   }
