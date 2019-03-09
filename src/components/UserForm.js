@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Image, Header } from 'semantic-ui-react';
 
-class UpdateUserForm extends Component {
+class UserForm extends Component {
   state={
     user: {}
   }
@@ -74,4 +74,4 @@ class UpdateUserForm extends Component {
   }
 }
 
-export default UpdateUserForm;
+export default UserForm;
