@@ -32,7 +32,7 @@ class UserComponent extends Component {
                 <h1
                 onClick={this.handleClose}
                 >X</h1>
-                   <UserForm user={this.props.user} />
+                   <UserForm user={this.props.user} updateUser={this.props.updateUser} />
 
                 </div>
             </div>
