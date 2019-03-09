@@ -12,7 +12,7 @@ class UserAuth extends Component{
 
         return(
                 <div>
-                    <section id="userAuth">
+                    <section id="userAuth" className="bg-gold mw7 center pa4 br2-ns ba b--black-10">
                         <div className="login">
                             <h4>Login</h4>
                             <span
