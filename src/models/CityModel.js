@@ -9,6 +9,12 @@ class CityModel {
     return request;
   };
 
+  static getCurrentCity(currentCityId) {
+    let request = axios.get(`${endPoint}/${currentCityId}`);
+    console.log(`axios get current city request: ${request}`);
+    return request;
+  }
+
 };
 
 export default CityModel;

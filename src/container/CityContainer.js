@@ -5,7 +5,8 @@ import CityPage from '../components/CityPage.js';
 
 class CityContainer extends Component {
   state = {
-    cities: []
+    cities: [],
+    currentCityId: sessionStorage.getItem('currentCity'),
   };
 
   componentDidMount() {
@@ -19,23 +20,12 @@ class CityContainer extends Component {
     });
   };
 
-  // changeCity
-
   render(){
-    let cities = this.state.cities.map( (city) => {
-      return (
-        <CityPage
-          key={city._id}
-          city={city}
-          user={this.props.user} />
-      );
-    });
-
     return(
       <div className="city-container">
         CityContainer
         <CityList cities={this.state.cities} user={this.props.user} />
-        {cities}
+        {/* <CityPage currentCityId={this.state.currentCityId} /> */}
       </div>
     )
   }

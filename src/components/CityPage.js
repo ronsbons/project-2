@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CityModel from '../models/CityModel.js';
 import CityPostContainer from "../container/CityPostContainer";
 import CreatePostForm from "./CreatePostForm";
 import CityPostsModel from '../models/CityPostsModel.js';
@@ -6,17 +7,28 @@ import Axios from "axios";
 
 class CityPage extends Component {
   state = {
+    currentCityId: this.props.currentCityId,
+    currentCity: {},
     posts: [],
+    post: null,
   };
 
   componentDidMount() {
     console.log(`CityPage mounted`);
-    this.fetchData();
+    CityModel.getCurrentCity(this.state.currentCityId).then( (response) => {
+      this.setState({
+        currentCity: response.data,
+      });
+      console.log(this.state.currentCity);
+    }).catch( (error) => {
+      console.log(`retrieving current city error: ${error}`);
+    });
+    // this.fetchData();
   }
 
   fetchData() {
     console.log(`CityPage fetching data`);
-    CityPostsModel.getCityPosts(this.props.city._id).then(res => {
+    CityPostsModel.getCityPosts(this.state.currentCity._id).then(res => {
       console.log(res);
       this.setState({
         posts: res.data,
@@ -45,13 +57,13 @@ class CityPage extends Component {
     return (
       <div>
         <h4>CityPage component</h4>
-        <h6>cityName - {this.props.city.cityName}</h6>
+        <h6>cityName - {this.props.currentCity.cityName}</h6>
         <p>
           cityPhoto -{" "}
           <img
             width="500px"
-            src={this.props.city.cityPhoto}
-            alt={this.props.city.cityName}
+            src={this.props.currentCity.cityPhoto}
+            alt={this.props.currentCity.cityName}
           />
         </p>
         <p>
@@ -62,8 +74,8 @@ class CityPage extends Component {
             alt="Golden Gate Bridge at dusk"
           />
         </p>
-        <CityPostContainer city={this.props.city} user={this.props.user} posts={this.state.posts} post={this.state.post} />
-        <CreatePostForm city={this.props.city} user={this.props.user} createPost={this.createPost} />
+        <CityPostContainer city={this.props.currentCity} user={this.props.user} posts={this.state.posts} post={this.state.post} />
+        <CreatePostForm city={this.props.currentCity} user={this.props.user} createPost={this.createPost} />
       </div>
     );
   }
