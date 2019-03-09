@@ -22,8 +22,12 @@ class UserContainer extends Component {
   render() {
     return (
       <div className="userContainer">
-       <UserComponent user={this.state.user} />
-       <PostContainer user={this.state.user} />
+       <UserComponent
+       className="fl w-50 bg-near-white tc"
+        user={this.state.user} />
+       <PostContainer 
+       className="fl w-50 bg-light-gray tc"
+       user={this.state.user} />
       </div>
     );
   }
