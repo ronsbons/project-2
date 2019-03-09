@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Modal, Image, Header } from 'semantic-ui-react';
 
 class UserForm extends Component {
-  state = {
-    user: {},
+  state={
+    user: {}
   }
 
   componentDidMount() {
@@ -14,31 +15,38 @@ class UserForm extends Component {
   }
 
   onInputChange = (event) => {
-    event.preventDefault();
     let user = this.state.user;
     user[event.target.name] = event.target.value;
+
     this.setState({
       user: user
     });
-    console.log(this.state.user);
-  };
 
-  // [] FORM UPDATE WILL CLEAR ONE OR THE OTHER ON SUBMIT IF ONLY ONE HAS INPUT
+    console.log(this.state.user)
+  }
+
   onFormSubmit = (event) => {
     event.preventDefault()
-    let user = this.state.user;
-    this.props.updateUser(this.props.user._id, user)
+    let user = this.state.user
+    this.props.updateUser(this.props.user._id,user)
     this.setState({
-      user: {
-        userCity: '',
-        userFullName: '',
-      },
-    });
-  };
+      user:{
+        userCity:'',
+        userFullName:''
+      }
+    })
+  }
 
   render() {
     return (
-      <div>
+
+      <Modal trigger={<a href="#userForm">Edit Profile</a>}>
+      <Modal.Header>Profile</Modal.Header>
+      <Modal.Content image>
+        <Image wrapped size='medium' src='http://static.nfl.com/static/content/public/static/img/fantasy/transparent/512x512/BRA371156.png' />
+        <Modal.Description>
+          <Header>UserName</Header>
+          <div>
         <form onSubmit={this.onFormSubmit}>
           <input 
           name="userFullName"
@@ -57,6 +65,11 @@ class UserForm extends Component {
           <button type="submit">Change</button>
         </form>
       </div>
+        </Modal.Description>
+      </Modal.Content>
+    </Modal>
+
+
     );
   }
 }
