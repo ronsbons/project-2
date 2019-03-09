@@ -51,12 +51,19 @@ class NavBar extends Component {
         }
 
         return(
-             <nav>
-                <ul>
-                    {navBarItems}
-                </ul>
-             </nav>       
-            
+            <div className="pa3 pa4-ns">
+                <div>
+                    <div className="link dim black b f1 f-headline-ns tc db mb3 mb4-ns">
+                         WayFarer
+                    </div>
+                    <div className="tc pb3">
+                        <div className="link dim gray f6 f5-ns dib mr3">
+                            {navBarItems}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         )
     }
 }
