@@ -1,22 +1,20 @@
 import React, { Component } from "react";
 import { Button, Header, Image, Modal } from 'semantic-ui-react';
+import UpdatePostForm from './UpdatePostForm';
 
  
 
 class PostDetail extends Component {
   state = {
-
-      formStyle : {display: 'block'},
-      bodyStyle : {},
   
   }
 
-  toggleBodyForm = () => {
-    (this.state.formStyle.display === 'block')?
-      this.setState({formStyle: {display: 'none'}, bodyStyle: {display:'block'} })
-    :
-      this.setState({formStyle: {display:'block'}, bodyStyle: {display: 'none'}})
-  }
+  handleOpen= () => {
+    document.getElementById('userProfileModal').style.display='block';
+}
+  handleClose= () => {
+    document.getElementById('lou').style.display='none';
+}
 
   render() {
     return (
@@ -37,10 +35,22 @@ class PostDetail extends Component {
         <div>
               <a
               href="#editPost"
-              onClick={this.toggleBodyForm}
+              onClick={this.handleOpen}
+              display="none"
               >
                 Edit
               </a>
+              <div
+              id="lou"
+              >
+                <UpdatePostForm
+                post={this.props.post}
+                updatePost={this.props.updatePost}
+                />
+                <h3
+                onClick={this.handleClose}
+                >X</h3>
+              </div>
         </div>
       </Modal.Description>
     </Modal.Content>

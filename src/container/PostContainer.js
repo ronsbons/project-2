@@ -38,6 +38,16 @@ class PostContainer extends Component {
     })
   }
 
+updatePost = (postId,postBody) => {
+    PostsModel.update(postId,postBody).then((res)=>{
+      let post = res.data;
+      console.log(res.data)
+      this.setState({
+        post:post
+      })
+    })
+  }
+
   render() {
     if (this.state.post === null) {
       return (
@@ -50,6 +60,7 @@ class PostContainer extends Component {
           <PostList 
           posts={this.state.posts} 
           deletePost={this.deletePost}
+          updatePost={this.updatePost}
           />
         </div>
       );

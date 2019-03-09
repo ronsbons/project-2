@@ -9,6 +9,7 @@ class PostList extends Component {
           key={post._id} 
           post={post}
           deletePost={this.props.deletePost}
+          updatePost={this.props.updatePost}
            />
       )
     });
