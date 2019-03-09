@@ -34,14 +34,10 @@ class PostDetail extends Component {
 
         <div>
               <a
-<<<<<<< HEAD
-              href="#editPost"              >
-=======
               href="#editPost"
               onClick={this.handleOpen}
               display="none"
               >
->>>>>>> Jon
                 Edit
               </a>
               <div
