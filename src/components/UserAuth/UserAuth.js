@@ -1,38 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
 import './UserAuth.css'
 
-const styles = theme => ({
-    paper: {
-      position: 'absolute',
-      backgroundColor: theme.palette.background.paper,
-      boxShadow: theme.shadows[5],
-      padding: theme.spacing.unit * 4,
-      outline: 'none',
-    },
-  });
-class Navmodal extends Component{
-    state= {
-        open:false
-    }
-
-    handleOpen = () => {
-        this.setState ({
-            open:true
-        })
-    }
-
-    handleClose = () => {
-        this.setState({
-            open:false
-        })
-    }
-
-
+class UserAuth extends Component{
     render(){
-        const { classes } = this.props;
         let handleInput = this.props.handleInput
         let handleSignup = this.props.handleSignup
         let handleLogin = this.props.handleLogin
@@ -42,19 +13,7 @@ class Navmodal extends Component{
 
         return(
                 <div>
-                    <button
-                    id="loginBtn"
-                    onClick={this.handleOpen}
-                    >
-                        Login/Signup
-                    </button>
-                    <Modal
-                    open={this.state.open}
-                    onClose={this.handleClose}
-                    >
-                    <section id="userAuth"
-                    className={classes.paper}
-                    >
+                    <section id="userAuth">
                         <div className="login">
                             <h4>Login</h4>
                             <span
@@ -116,20 +75,11 @@ class Navmodal extends Component{
                                 </button>
                              </form>
                             </div>
-
                     </section>
-                </Modal>
             </div>
             
         )
     }
 }
-
-Navmodal.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
-
-const UserAuth = withStyles(styles)(Navmodal);
-
 
 export default UserAuth;
