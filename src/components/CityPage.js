@@ -41,9 +41,6 @@ class CityPage extends Component {
   createPost = post => {
     let newPost = post;
     console.log(newPost);
-    // [] SUCCESSFULLY MOVED THIS AXIOS CALL TO CITYPOSTS MODEL
-    // Axios.post("https://arcane-citadel-72655.herokuapp.com/api/posts", newPost)
-      // .then(response => {
     CityPostsModel.createPost(newPost).then( (response) => {
         let posts = this.state.posts;
         posts.push(response.data);
