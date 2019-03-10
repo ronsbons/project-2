@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const endPoint = 'https://arcane-citadel-72655.herokuapp.com/api/cities';
+// const endPoint = 'https://arcane-citadel-72655.herokuapp.com/api/cities';
+const endPoint = 'http://localhost:3001/cities';
+
 
 class CityModel {
   static allCities() {

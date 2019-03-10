@@ -8,6 +8,7 @@ class PostsModel {
     return request;
   };
 
+  // [] NOT NEEDED IN THIS POSTSMODEL
   static getCityPosts(cityId) {
     let request = axios.get(`${endPoint}/${cityId}`);
     return request;
