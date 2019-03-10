@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UserModel from '../models/UserModel.js';
 import UserComponent from '../components/UserComponent';
-import UserForm from '../components/UserForm';
+// import UserForm from '../components/UserForm';
 import PostContainer from "./PostContainer";
 
 class UserContainer extends Component {

@@ -6,7 +6,12 @@ class CityPostsModel {
   static getCityPosts(cityId) {
     let request = axios.get(`${endPoint}/${cityId}`);
     return request;
+  };
+
+  static createPost(newPost) {
+    let request = axios.post(`${endPoint}`, newPost);
+    return request;
   }
-}
+};
 
 export default CityPostsModel;

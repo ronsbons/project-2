@@ -28,12 +28,12 @@ class CityPage extends Component {
       .catch(error => {
         console.log(`retrieving current city error: ${error}`);
       });
-    // this.fetchData();
   }
 
   fetchData() {
     console.log(`CityPage fetching data`);
-    CityPostsModel.getCityPosts(this.state.currentCity._id).then(res => {
+    // CityPostsModel.getCityPosts(this.state.currentCity._id).then(res => {
+    CityPostsModel.getCityPosts(this.props.city._id).then(res => {
       console.log(res);
       this.setState({
         posts: res.data
@@ -45,15 +45,13 @@ class CityPage extends Component {
   createPost = post => {
     let newPost = post;
     console.log(newPost);
-    Axios.post("https://arcane-citadel-72655.herokuapp.com/api/posts", newPost)
-      .then(response => {
+    CityPostsModel.createPost(newPost).then( (response) => {
         let posts = this.state.posts;
         posts.push(response.data);
         this.setState({
           posts: posts
         });
-      })
-      .catch(error => {
+      }).catch(error => {
         console.log("create new form error: ", error);
       });
   };
@@ -94,14 +92,6 @@ class CityPage extends Component {
             alt={this.state.currentCity.cityName}
           />
         </p>
-        {/* <p>
-          hard coded image - <br />
-          <img
-            width="500px"
-            src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1444253482%2FDG2015-san-francisco.jpg%3Fitok%3DMdRJm2Zo&f=1"
-            alt="Golden Gate Bridge at dusk"
-          />
-        </p> */}
         <CityPostContainer
           city={this.props.currentCity}
           user={this.props.user}
