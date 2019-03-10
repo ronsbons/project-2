@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const endPoint = `http://arcane-citadel-72655.herokuapp.com/api/userposts`;
+const endPoint = `http://localhost:3001/api/userposts`;
 
 class PostsModel {
   static getUserPosts(userId) {
@@ -12,6 +12,20 @@ class PostsModel {
     let request = axios.get(`${endPoint}/${cityId}`);
     return request;
   };
+
+  static deleteUserPosts(post) {
+    console.log(post)
+    let request = axios.delete(`${endPoint}/${post._id}`)
+    return request;
+  };
+
+  static update (postId,updateInfo){
+    let request = axios.put(`${endPoint}/${postId}`,updateInfo)
+    return request;
+  }
+
 };
+
+
 
 export default PostsModel;
