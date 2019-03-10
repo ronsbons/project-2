@@ -8,7 +8,9 @@ class CityList extends Component {
         <City 
           key={city._id} 
           city={city}
-          user={this.props.user} />
+          user={this.props.user} 
+          loadCity={this.props.loadCity} 
+          />
       )
     });
 

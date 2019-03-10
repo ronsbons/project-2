@@ -19,8 +19,8 @@ class CreatePostForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     let post = {
-      city: this.props.city._id,
-      user: this.props.user._id,
+      city: this.props.city,
+      user: this.props.user,
       postTitle: this.state.postTitle,
       postContent: this.state.postContent
     };

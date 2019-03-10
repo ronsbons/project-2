@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const endPoint = 'https://arcane-citadel-72655.herokuapp.com/api/cities';
+const endPoint = 'https://arcane-citadel-72655.herokuapp.com/cities';
 
 class CityModel {
   static allCities() {
@@ -14,7 +14,6 @@ class CityModel {
     console.log(`axios get current city request: ${request}`);
     return request;
   }
-
 };
 
 export default CityModel;
