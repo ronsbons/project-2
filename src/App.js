@@ -30,7 +30,8 @@ class App extends Component {
     if (localStorage.token) {
       axios({
         method: "GET",
-        url: "https://arcane-citadel-72655.herokuapp.com/user",
+        // url: "https://arcane-citadel-72655.herokuapp.com/user",
+        url: "http://localhost:3001/user",
         headers: { authorization: `Bearer ${localStorage.token}` }
       })
         .then(response => {
@@ -60,7 +61,8 @@ class App extends Component {
   handleLogin = event => {
     event.preventDefault();
     axios
-      .post("https://arcane-citadel-72655.herokuapp.com/user/login", {
+      // .post("https://arcane-citadel-72655.herokuapp.com/user/login",
+      .post("http://localhost:3001/user/login", {
         email: this.state.email,
         password: this.state.password
       })
@@ -83,8 +85,9 @@ class App extends Component {
   // Handles user signup
   handleSignup = event => {
     event.preventDefault();
+    // axios.post("https://arcane-citadel-72655.herokuapp.com/user/signup", )
     axios
-      .post("https://arcane-citadel-72655.herokuapp.com/user/signup", {
+      .post("http://localhost:3001/user/signup", {
         email: this.state.email,
         password: this.state.password
       })
