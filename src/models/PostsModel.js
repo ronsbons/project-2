@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const endPoint = `https://arcane-citadel-72655.herokuapp.com/api/userposts`;
+// const endPoint = `https://arcane-citadel-72655.herokuapp.com/api/userposts`;
+const endPoint = `http://localhost:3001/userposts`;
 
 class PostsModel {
   static getUserPosts(userId) {
@@ -8,11 +9,11 @@ class PostsModel {
     return request;
   };
 
-  // [] NOT NEEDED IN THIS POSTSMODEL
-  static getCityPosts(cityId) {
-    let request = axios.get(`${endPoint}/${cityId}`);
-    return request;
-  };
+  // [] NOT NEEDED IN THIS POSTSMODEL, GET CITYPOSTS IS IN CITYPOSTSMODEL.JS
+  // static getCityPosts(cityId) {
+  //   let request = axios.get(`${endPoint}/${cityId}`);
+  //   return request;
+  // };
 };
 
 export default PostsModel;
