@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const endPoint = `https://arcane-citadel-72655.herokuapp.com/userposts`;
-const endPoint = `http://localhost:3001/userposts`;
+const endPoint = `https://stark-chamber-26373.herokuapp.com/userposts`;
+// const endPoint = `http://localhost:3001/userposts`;
 
 class PostsModel {
   static getUserPosts(userId) {
