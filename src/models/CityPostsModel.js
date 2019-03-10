@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const endPoint = "http://localhost:3001/api/cities";
+const endPoint = `https://arcane-citadel-72655.herokuapp.com/posts`;
 
 class CityPostsModel {
   static getCityPosts(cityId) {

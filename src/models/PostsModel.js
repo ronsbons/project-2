@@ -1,15 +1,10 @@
 import axios from "axios";
 
-const endPoint = 'http://localhost:3001/api/userposts';
+const endPoint = `https://arcane-citadel-72655.herokuapp.com/userposts`;
 
 class PostsModel {
   static getUserPosts(userId) {
     let request = axios.get(`${endPoint}/${userId}`);
-    return request;
-  };
-
-  static getCityPosts(cityId) {
-    let request = axios.get(`${endPoint}/${cityId}`);
     return request;
   };
 
@@ -23,9 +18,6 @@ class PostsModel {
     let request = axios.put(`${endPoint}/${postId}`,updateInfo)
     return request;
   }
-
 };
-
-
 
 export default PostsModel;

@@ -4,7 +4,6 @@ import './UserAuth.css'
 
 
 class UserAuth extends Component{
-
     render(){
         let handleInput = this.props.handleInput
         let handleSignup = this.props.handleSignup
@@ -47,7 +46,6 @@ class UserAuth extends Component{
                                 </button>
                             </form> 
                         </div>
-
                     </Modal.Content>
                     <Modal.Header>Please Signup/Login</Modal.Header>
                   <Modal.Content >
@@ -85,14 +83,8 @@ class UserAuth extends Component{
                 </div>
             </Modal.Content>
         </Modal>
-
-
-
-                    
-            
         )
     }
 }
-
 
 export default UserAuth;

@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
-import UserForm from "./UserForm";
+import UserForm from './UserForm';
+
 class UserComponent extends Component {
+    state = {
+        open:false
+    }
+
+    handleClose= () => {
+        document.getElementById('userProfileModal').style.display='none';
+    }
+
+    handleOpen= () => {
+        document.getElementById('userProfileModal').style.display='block';
+    }
     render() {
         return (
             <div className="userComponent">
@@ -11,8 +23,8 @@ class UserComponent extends Component {
                 <h3>{this.props.user.userCity}</h3>
                 <h3>{this.props.user.userJoinDate}</h3>
                 <UserForm 
-                user={this.props.user}
-                updateUser={this.props.updateUser}
+                  user={this.props.user}
+                  updateUser={this.props.updateUser}
                 />
             </div>
         );

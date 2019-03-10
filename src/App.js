@@ -26,7 +26,7 @@ class App extends Component {
     if (localStorage.token) {
       axios({
         method: "GET",
-        url: "http://localhost:3001/user",
+        url: "https://arcane-citadel-72655.herokuapp.com/user",
         headers: { authorization: `Bearer ${localStorage.token}` }
       })
         .then(response => {
@@ -56,7 +56,7 @@ class App extends Component {
   handleLogin = event => {
     event.preventDefault();
     axios
-      .post("http://localhost:3001/user/login", {
+      .post("https://arcane-citadel-72655.herokuapp.com/user/login", {
         email: this.state.email,
         password: this.state.password
       })
@@ -80,7 +80,7 @@ class App extends Component {
   handleSignup = event => {
     event.preventDefault();
     axios
-      .post("http://localhost:3001/user/signup", {
+      .post("https://arcane-citadel-72655.herokuapp.com/user/signup", {
         email: this.state.email,
         password: this.state.password
       })
