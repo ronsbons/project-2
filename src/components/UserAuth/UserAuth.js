@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+import { Button, Header, Image, Modal } from 'semantic-ui-react'
 import './UserAuth.css'
 
+
 class UserAuth extends Component{
+
     render(){
         let handleInput = this.props.handleInput
         let handleSignup = this.props.handleSignup
@@ -80,5 +83,6 @@ class UserAuth extends Component{
         )
     }
 }
+
 
 export default UserAuth;

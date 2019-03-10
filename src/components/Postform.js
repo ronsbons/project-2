@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Image, Header } from 'semantic-ui-react';
 
-class UserForm extends Component {
+class Postform extends Component {
   state={
     user: {}
   }
@@ -74,4 +74,4 @@ class UserForm extends Component {
   }
 }
 
-export default UserForm;
+export default Postform;

@@ -4,10 +4,11 @@ import PostList from "../components/PostList";
 
 class PostContainer extends Component {
   state = {
-    userId: this.props.user._id,
     posts: [],
-    post: null
+    post: null,
+    userId: this.props.user._id
   };
+
 
   componentDidMount() {
     this.fetchData();
@@ -22,17 +23,45 @@ class PostContainer extends Component {
       });
       console.log(this.state.posts);
       console.log(this.state.post);
+    }).catch( (error) => {
+      console.log('retrieving user posts error: ', error);
     });
+  };
+
+  deletePost = (post) => {
+    PostsModel.deleteUserPosts(post).then((res) => {
+      let posts = this.state.posts.filter(function(post) {
+        
+        return post._id !== res.data._id
+      });
+      this.setState({ posts });
+    })
+  }
+
+updatePost = (postId,postBody) => {
+    PostsModel.update(postId,postBody).then((res)=>{
+      let post = res.data;
+      console.log(res.data)
+      this.setState({
+        post:post
+      })
+    })
   }
 
   render() {
     if (this.state.post === null) {
-      return <div className="postsContainer" />;
+      return (
+        <div className="postsConstainer" />
+      )
     } else {
       return (
-        <div className="postsContainer">
+        <div className="postsConstainer">
           <h2>This is a post container</h2>
-          <PostList posts={this.state.posts} />
+          <PostList 
+          posts={this.state.posts} 
+          deletePost={this.deletePost}
+          updatePost={this.updatePost}
+          />
         </div>
       );
     }
