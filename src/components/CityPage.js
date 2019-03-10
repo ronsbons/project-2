@@ -16,6 +16,7 @@ class CityPage extends Component {
     post: null
   };
 
+  // upon first page load/mount, load default city
   componentDidMount() {
     console.log(`CityPage mounted`);
     CityModel.getCurrentCity(this.props.currentCityId)
@@ -24,23 +25,51 @@ class CityPage extends Component {
           currentCity: response.data[0]
         });
         console.log(this.state.currentCity);
+        console.log('trying to get posts upon initial page load');
+        this.fetchData();
       })
       .catch(error => {
-        console.log(`retrieving current city error: ${error}`);
+        console.log(`componentDidMount retrieving current city error: ${error}`);
       });
   }
 
+  componentDidUpdate(prevProps) {
+    console.log('component did update');
+    // Loads city information if city id is changed.
+    if (this.props.currentCityId !== prevProps.currentCityId) {
+      console.log("city id", this.props);
+      this.loadCity();
+    }
+  }
+
+  loadCity() {
+    console.log('in loadCity');
+    CityModel.getCurrentCity(this.props.currentCityId)
+      .then(response => {
+        this.setState({
+          currentCity: response.data[0]
+        });
+        console.log(this.state.currentCity);
+        this.fetchData(); // load posts
+      })
+      .catch(error => {
+        console.log(`componentDidUpdate loadCity retrieving current city error: ${error}`);
+      });
+  }
+
+  // get city posts
   fetchData() {
-    console.log(`CityPage fetching data`);
-    // CityPostsModel.getCityPosts(this.state.currentCity._id).then(res => {
-    CityPostsModel.getCityPosts(this.props.city._id).then(res => {
+    console.log(`CityPage fetching posts data`);
+    CityPostsModel.getCityPosts(this.state.currentCity._id).then(res => {
       console.log(res);
       this.setState({
         posts: res.data
       });
       console.log(this.state.posts);
+    }).catch( (error) => {
+      console.log(`fetch posts data error: ${error}`);
     });
-  }
+  };
 
   createPost = post => {
     let newPost = post;
@@ -55,28 +84,6 @@ class CityPage extends Component {
         console.log("create new form error: ", error);
       });
   };
-
-  loadCity() {
-    CityModel.getCurrentCity(this.props.currentCityId)
-      .then(response => {
-        this.setState({
-          currentCity: response.data[0]
-        });
-        this.fetchData(); // load posts
-        console.log(this.state.currentCity);
-      })
-      .catch(error => {
-        console.log(`retrieving current city error: ${error}`);
-      });
-  }
-
-  componentDidUpdate(prevProps) {
-    // Loads city information if city id is changed.
-    if (this.props.currentCityId !== prevProps.currentCityId) {
-      console.log("city id", this.props);
-      this.loadCity();
-    }
-  }
 
   render() {
     return (
