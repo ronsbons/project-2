@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class City extends Component {
-  changeCity = (event) => {
+  changeCity = event => {
     event.preventDefault();
     sessionStorage.clear();
-    sessionStorage.setItem('currentCity', this.props.city._id);
-    console.log(this.props.city);
+    sessionStorage.setItem("currentCity", this.props.city._id);
+    console.log("City", this.props.city);
+    this.props.loadCity();
   };
 
   render() {
