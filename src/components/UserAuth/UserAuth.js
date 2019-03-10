@@ -14,9 +14,14 @@ class UserAuth extends Component{
         let loginError = this.props.loginMessage
 
         return(
-                <div>
-                    <section id="userAuth" className="bg-gold mw7 center pa4 br2-ns ba b--black-10">
-                        <div className="login">
+            <Modal 
+            id="loginModal"
+            trigger={<button>Login/Signup</button>}>
+              <Modal.Header>Please Signup/Login</Modal.Header>
+              <Modal.Content >
+                    {/* <section id="userAuth" className="bg-gold mw7 center pa4 br2-ns ba b--black-10"> */}
+
+                        <div className="bg-gold mw7 center pa4 br2-ns ba b--black-10">
                             <h4>Login</h4>
                             <span
                                 className="errorMessage"
@@ -43,42 +48,84 @@ class UserAuth extends Component{
                                 </button>
                             </form> 
                         </div>
-                        <div className="signup">
-                            <h4>Signup</h4>
-                            <span
-                                className="errorMessage"
-                                >{signUpError}</span>
-                            <form className="signup" 
-                            onSubmit={handleSignup}
-                            >
-                                <input
-                                type="text"
-                                name="email"
-                                // value={this.props.username}
-                                onChange={handleInput}
-                                placeholder="Email"
-                                />
-                                <input
-                                type="text"
-                                name="password"
-                                onChange={handleInput}
-                                placeholder="Password" 
-                                />
-                                <input 
-                                type="text"
-                                name="password"
-                                onChange={handleInput}
-                                placeholder="Confirm Password"
-                                />
-                                <button
-                                className="signupButton"
-                                type="submit"
-                                >Sign up
-                                </button>
-                             </form>
-                            </div>
-                    </section>
-            </div>
+
+                    </Modal.Content>
+                    <Modal.Header>Please Signup/Login</Modal.Header>
+                  <Modal.Content >
+                <div className="bg-gold mw7 center pa4 br2-ns ba b--black-10">
+                    <h4>Login</h4>
+                      <form
+                      onSubmit={handleSignup}
+                      >
+                      <span
+                       className="errorMessage"
+                       >
+                       {signUpError}
+                       </span>
+
+                        <input 
+                        type="text"
+                        name="email"
+                        placeholder="email"
+                        onChange={handleInput}
+                        />
+
+                        <input
+                         type="password"
+                         placeholder="Password"
+                         name="password"
+                         onChange={handleInput}/>
+
+                         <input
+                         type="Submit"
+                         value="Sign Up"
+                         className="loginBtn"
+                         />
+
+                      </form>
+                </div>
+
+                  </Modal.Content>
+
+                   </Modal>
+
+                        // <div className="signup">
+                        //     <h4>Signup</h4>
+                        //     <span
+                        //         className="errorMessage"
+                        //         >{signUpError}</span>
+                        //     <form className="signup" 
+                        //     onSubmit={handleSignup}
+                        //     >
+                        //         <input
+                        //         type="text"
+                        //         name="email"
+                        //         // value={this.props.username}
+                        //         onChange={handleInput}
+                        //         placeholder="Email"
+                        //         />
+                        //         <input
+                        //         type="text"
+                        //         name="password"
+                        //         onChange={handleInput}
+                        //         placeholder="Password" 
+                        //         />
+                        //         <input 
+                        //         type="text"
+                        //         name="password"
+                        //         onChange={handleInput}
+                        //         placeholder="Confirm Password"
+                        //         />
+                        //         <button
+                        //         className="signupButton"
+                        //         type="submit"
+                        //         >Sign up
+                        //         </button>
+                        //      </form>
+                        //      <div></div>
+
+                  
+                    
             
         )
     }

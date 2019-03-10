@@ -7,10 +7,23 @@
     content: '';
 }
 
+#loginModal {
+    background: orange;
+}
+
 .letterY {
     color: rgb(34, 34, 34);
     font-weight: 600;
 }
+
+/* User Login Form */
+
+.errorMessage {
+    color:red;
+
+}
+
+
 
 /* List Styles */
 ul {
