@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PostDetail from './PostDetail';
-import DeletePostModal from './deletePostModal'
+import DeletePostModal from './DeletePostModal'
 
 class Post extends Component {
 
@@ -13,9 +13,9 @@ class Post extends Component {
       <li data-posts-index={this.props.post.id}>
           <div>
               <span>{this.props.post.postTitle}</span>
-
+          
           <DeletePostModal
-          deletePost={this.deleteUserPost}
+          deleteUserPost={this.deleteUserPost}
           />
 
           </div>
