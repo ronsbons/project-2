@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const endPoint = `http://localhost:3001/api/users`;
+const endPoint = 'http://arcane-citadel-72655.herokuapp.com/api/cities';
 
 class UserModel {
   static allUsers() {
@@ -14,7 +14,7 @@ class UserModel {
     let request = axios.put(`${endPoint}/${userId}`, updateInfo)
     return request
   }
-  
+
 }
 
 export default UserModel;
