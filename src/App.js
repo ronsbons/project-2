@@ -26,8 +26,8 @@ class App extends Component {
     if (localStorage.token) {
       axios({
         method: "GET",
-        // url: "https://stark-chamber-26373.herokuapp.com/user",
-        url: 'http://localhost:3001/user',
+        url: "https://stark-chamber-26373.herokuapp.com/user",
+        // url: 'http://localhost:3001/user',
         headers: { authorization: `Bearer ${localStorage.token}` }
       })
         .then(response => {
@@ -57,8 +57,8 @@ class App extends Component {
   handleLogin = event => {
     event.preventDefault();
     axios
-      // .post("https://stark-chamber-26373.herokuapp.com/user/login", {
-      .post("http://localhost:3001/user/login", {
+      .post("https://stark-chamber-26373.herokuapp.com/user/login", {
+      // .post("http://localhost:3001/user/login", {
         email: this.state.email,
         password: this.state.password
       })
@@ -82,8 +82,8 @@ class App extends Component {
   handleSignup = event => {
     event.preventDefault();
     axios
-      // .post("https://stark-chamber-26373.herokuapp.com/user/signup", {
-      .post("http://localhost:3001/user/signup", {
+      .post("https://stark-chamber-26373.herokuapp.com/user/signup", {
+      // .post("http://localhost:3001/user/signup", {
         email: this.state.email,
         password: this.state.password
       })

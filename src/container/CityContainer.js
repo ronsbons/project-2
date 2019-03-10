@@ -10,7 +10,7 @@ class CityContainer extends Component {
   }
   state = {
     cities: [],
-    currentCityId: '5c81c079e9aa3b73db95b569',
+    currentCityId: '5c8597b55ed36e00172d909d',
   };
 
   componentDidMount() {
