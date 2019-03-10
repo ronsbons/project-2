@@ -1,0 +1,90 @@
+.highlight-header {
+    background-color: ;
+    line-height: 60%;
+    left: 0px;
+    width: 100%;
+    color: white;
+    content: '';
+}
+
+#loginModal {
+    background: orange;
+}
+
+.letterY {
+    color: rgb(34, 34, 34);
+    font-weight: 600;
+}
+
+/* User Login Form */
+
+.errorMessage {
+    color:red;
+
+}
+
+
+
+List Styles
+ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  li {
+    font-size: 0.875em;
+    padding: 1.2em 0;
+    border-top: 1px solid #e5e5e5;
+    list-style: none;
+    margin-top: 2em;
+  }
+  
+  li a {
+    color: #95a5a6;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-left: 2em;
+    float: right;
+    text-decoration: none;
+    line-height: 2;
+  }
+  
+  li:hover a:hover {
+    text-decoration: underline;
+  }
+
+  /* User Page */
+
+#userPhoto {
+    border-radius: 50%
+  }
+
+  a {
+      margin-right: 1em;
+  }
+
+  .userContainer {
+    display: flex;
+    width: 100%;
+  }
+
+
+.userContainer {
+    display: flex;
+    width: 100%;
+  }
+  
+  a  {
+      color:red    
+  }
+  
+  a:hover a:hover {
+      text-decoration: underline;
+      cursor:pointer;
+    }
+
+ 
+

@@ -15,29 +15,21 @@ class UserComponent extends Component {
     }
     render() {
         return (
-            <div>
-                <h3>{this.props.user._id}</h3>
-                <h3>{this.props.user.userPhoto}</h3>
+            <div className="userComponent">
+                <img id="userPhoto" src='http://static.nfl.com/static/content/public/static/img/fantasy/transparent/512x512/BRA371156.png'/>
+
+                {/* <h3>{this.props.user.userPhoto}</h3> */}
                 <h3>{this.props.user.userFullName}</h3>
                 <h3>{this.props.user.userCity}</h3>
                 <h3>{this.props.user.userJoinDate}</h3>
-
-                <button
-                onClick={this.handleOpen}
-                >
-                Modal
-                </button>
-                <div 
-                id="userProfileModal">
-                <h1
-                onClick={this.handleClose}
-                >X</h1>
-                   <UserForm user={this.props.user} updateUser={this.props.updateUser} />
-
-                </div>
+                <UserForm 
+                  user={this.props.user}
+                  updateUser={this.props.updateUser}
+                />
             </div>
         );
     }
 }
 
 export default UserComponent;
+

@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 import Nav from "./components/NavBar";
-import HomeContainer from './container/HomeContainer';
-import UserContainer from './container/UserContainer.js';
-import CityContainer from './container/CityContainer.js';
-import {
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
-import axios from 'axios';
-import './App.css';
+import HomeContainer from "./container/HomeContainer";
+import UserContainer from "./container/UserContainer.js";
+import CityContainer from "./container/CityContainer.js";
+import { Route, Switch, Redirect } from "react-router-dom";
+import axios from "axios";
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -73,7 +69,7 @@ class App extends Component {
         });
         this.verify();
       })
-      .catch( error => {
+      .catch(error => {
         this.setState({
           loginMessage: "Email/Password incorrect"
         });
@@ -130,52 +126,45 @@ class App extends Component {
         />
         <Switch>
           <Route
-            exact path="/"
+            exact
+            path="/"
             render={() => {
-              if(this.state.isLoggedIn){
-                return(
-                  <Redirect to="/profile" />
-                )
+              if (this.state.isLoggedIn) {
+                return <Redirect to="/profile" />;
               } else {
-                return (
-                  <HomeContainer/>
-                )
-              };
+                return <HomeContainer />;
+              }
             }}
           />
           <Route
-            exact path="/profile"
+            exact
+            path="/profile"
             render={() => {
-
-              if(this.state.isLoggedIn){
-                return(
-                  <UserContainer 
-                    user={this.state.user}
-                  />
-                )
+              if (this.state.isLoggedIn) {
+                return <UserContainer user={this.state.user} />;
               } else {
                 return <Redirect to="/" />;
               }
             }}
           />
 
-          <Route exact path="/cities"
-            render={()=>{
-              if(this.state.isLoggedIn){
-                return(
-                  <CityContainer user={this.state.user} />
-                )
+          <Route
+            exact
+            path="/cities"
+            render={() => {
+              if (this.state.isLoggedIn) {
+                return <CityContainer user={this.state.user} />;
               } else {
-                return(
-                  <Redirect to='/'/>
-                )
-              };
+                return <Redirect to="/" />;
+              }
             }}
-            />
+          />
+
+          {/* https://stackoverflow.com/questions/45898789/react-router-pass-param-to-component */}
         </Switch>
       </div>
     );
-  };
-};
+  }
+}
 
 export default App;

@@ -6,15 +6,19 @@ class PostList extends Component {
     let posts = this.props.posts.map( (post) => {
       return (
           <Post 
-            key={post._id} 
-            post={post} />
+          key={post._id} 
+          post={post}
+          deletePost={this.props.deletePost}
+          updatePost={this.props.updatePost}
+          user={this.props.user}
+           />
       )
     });
     return (
-      <ul>
-        {posts}
-      </ul> 
-    );
+    <ul>
+    {posts}
+    </ul> 
+      );
   }
 }
 
