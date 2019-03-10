@@ -14,7 +14,6 @@ class CityModel {
     console.log(`axios get current city request: ${request}`);
     return request;
   }
-
 };
 
 export default CityModel;

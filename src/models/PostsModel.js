@@ -8,11 +8,16 @@ class PostsModel {
     return request;
   };
 
-  // [] NOT NEEDED IN THIS POSTSMODEL, GET CITYPOSTS IS IN CITYPOSTSMODEL.JS
-  // static getCityPosts(cityId) {
-  //   let request = axios.get(`${endPoint}/${cityId}`);
-  //   return request;
-  // };
+  static deleteUserPosts(post) {
+    console.log(post)
+    let request = axios.delete(`${endPoint}/${post._id}`)
+    return request;
+  };
+
+  static update (postId,updateInfo){
+    let request = axios.put(`${endPoint}/${postId}`,updateInfo)
+    return request;
+  }
 };
 
 export default PostsModel;

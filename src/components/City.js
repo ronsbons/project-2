@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import CityPage from './CityPage.js';
+import React, { Component } from "react";
 
 class City extends Component {
-  // changeCity = (event) => {
-  //   event.preventDefault();
-  //   sessionStorage.clear();
-  //   sessionStorage.setItem('currentCity', this.props.city._id);
-  //   console.log(this.props.city);
-  // };
+  changeCity = event => {
+    event.preventDefault();
+    sessionStorage.clear();
+    sessionStorage.setItem("currentCity", this.props.city._id);
+    console.log("City", this.props.city);
+    this.props.loadCity(); // Update CityContainer
+  };
 
   render() {
     return (
@@ -15,7 +15,6 @@ class City extends Component {
         <h5>City component</h5>
         <p>{this.props.city.cityName}</p>
         <button onClick={this.changeCity}>{this.props.city.cityName}</button>
-        <CityPage city={this.props.city} user={this.props.user} />
       </div>
     );
   }
