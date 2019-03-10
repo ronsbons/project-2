@@ -45,14 +45,15 @@ class NavBar extends Component {
         }
 
         return(
-            <div className="tc pa3 pa4-ns">
-                <div className>
+            <div className="pa3 pa4-ns">
+                <div>
                     <div className="link dim black b f1 f-headline-ns tc db mb3 mb4-ns">
-                        <h1 className="bg-gold fw6 sans-serif tracked-tight mt0 w-auto dib highlight-header">
-                        Wa<span className='letterY fw7'>y</span>ƒarer
-                        </h1>
+                    <h1 className="bg-gold fw6 sans-serif tracked-tight mt0 w-auto dib highlight-header">
+                    Wa<span className='letterY fw6'>y</span>Farer
+                    </h1>
                          
                     </div>
+                    <div></div>
                     <div className="link dim gray f6 f5-ns dib mr3">
                         {navBarItems}
                     </div>
