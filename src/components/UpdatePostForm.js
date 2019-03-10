@@ -54,8 +54,9 @@ class UpdatePostForm extends Component {
             </form>
       </div>
 
-);
-}
+
+    );
+  }
 }
 
 export default UpdatePostForm;

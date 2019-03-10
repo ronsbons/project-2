@@ -10,6 +10,7 @@ ul {
     padding: 1.2em 0;
     border-top: 1px solid #e5e5e5;
     list-style: none;
+    margin-top: 2em;
   }
   
   li a {
@@ -28,9 +29,14 @@ ul {
     text-decoration: underline;
   }
 
+  /* User Page */
 
 #userPhoto {
     border-radius: 50%
+  }
+
+  a {
+      margin-right: 1em;
   }
 
   .userContainer {
