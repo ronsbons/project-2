@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const endPoint = `https://arcane-citadel-72655.herokuapp.com/user`;
+// const endPoint = `http://localhost:3001/user`;
 
 class UserModel {
   static allUsers() {
