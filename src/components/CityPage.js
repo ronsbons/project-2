@@ -1,28 +1,33 @@
 import React, { Component } from "react";
-import CityModel from '../models/CityModel.js';
+import CityModel from "../models/CityModel.js";
 import CityPostContainer from "../container/CityPostContainer";
 import CreatePostForm from "./CreatePostForm";
-import CityPostsModel from '../models/CityPostsModel.js';
+import CityPostsModel from "../models/CityPostsModel.js";
 import Axios from "axios";
 
 class CityPage extends Component {
   state = {
     currentCityId: this.props.currentCityId,
-    currentCity: {},
+    currentCity: {
+      cityName: "",
+      cityPhoto: ""
+    },
     posts: [],
-    post: null,
+    post: null
   };
 
   componentDidMount() {
     console.log(`CityPage mounted`);
-    CityModel.getCurrentCity(this.state.currentCityId).then( (response) => {
-      this.setState({
-        currentCity: response.data,
+    CityModel.getCurrentCity(this.state.currentCityId)
+      .then(response => {
+        this.setState({
+          currentCity: response.data[0]
+        });
+        console.log(this.state.currentCity);
+      })
+      .catch(error => {
+        console.log(`retrieving current city error: ${error}`);
       });
-      console.log(this.state.currentCity);
-    }).catch( (error) => {
-      console.log(`retrieving current city error: ${error}`);
-    });
     // this.fetchData();
   }
 
@@ -31,7 +36,7 @@ class CityPage extends Component {
     CityPostsModel.getCityPosts(this.state.currentCity._id).then(res => {
       console.log(res);
       this.setState({
-        posts: res.data,
+        posts: res.data
       });
       console.log(this.state.posts);
     });
@@ -45,7 +50,7 @@ class CityPage extends Component {
         let posts = this.state.posts;
         posts.push(response.data);
         this.setState({
-          posts: posts,
+          posts: posts
         });
       })
       .catch(error => {
@@ -53,17 +58,39 @@ class CityPage extends Component {
       });
   };
 
+  reload = event => {
+    event.preventDefault();
+    this.setState({
+      currentCityId: sessionStorage.getItem("currentCity")
+    });
+    console.log(this.state.currentCity);
+
+    CityModel.getCurrentCity(this.state.currentCityId)
+      .then(response => {
+        this.setState({
+          currentCity: response.data[0]
+        });
+        this.fetchData(); // load posts
+        console.log(this.state.currentCity);
+      })
+      .catch(error => {
+        console.log(`retrieving current city error: ${error}`);
+      });
+  };
+
   render() {
     return (
       <div>
+        <button onClick={this.reload}>Reload</button>
         <h4>CityPage component</h4>
-        <h6>cityName - {this.props.currentCity.cityName}</h6>
+        <h6>ID - {this.state.currentCityId}</h6>
+        <h6>cityName - {this.state.currentCity.cityName}</h6>
         <p>
           cityPhoto -{" "}
           <img
             width="500px"
-            src={this.props.currentCity.cityPhoto}
-            alt={this.props.currentCity.cityName}
+            src={this.state.currentCity.cityPhoto}
+            alt={this.state.currentCity.cityName}
           />
         </p>
         <p>
@@ -74,8 +101,17 @@ class CityPage extends Component {
             alt="Golden Gate Bridge at dusk"
           />
         </p>
-        <CityPostContainer city={this.props.currentCity} user={this.props.user} posts={this.state.posts} post={this.state.post} />
-        <CreatePostForm city={this.props.currentCity} user={this.props.user} createPost={this.createPost} />
+        <CityPostContainer
+          city={this.props.currentCity}
+          user={this.props.user}
+          posts={this.state.posts}
+          post={this.state.post}
+        />
+        <CreatePostForm
+          city={this.props.currentCityId}
+          user={this.props.user}
+          createPost={this.createPost}
+        />
       </div>
     );
   }
