@@ -48,9 +48,11 @@ class UserForm extends Component {
             src="http://static.nfl.com/static/content/public/static/img/fantasy/transparent/512x512/BRA371156.png"
           />
           <Modal.Description>
-            <Header>UserName</Header>
-            <div>
+            <Header>Profile Details</Header>
+
               <form onSubmit={this.onFormSubmit}>
+                <div className="flex flex-column">
+                <h3>Name</h3>
                 <input
                   name="userFullName"
                   onChange={this.onInputChange}
@@ -58,6 +60,7 @@ class UserForm extends Component {
                   placeholder="Name"
                   value={this.state.user.userFullName || ""}
                 />
+                <h3>Home City</h3>
                 <input
                   name="userCity"
                   onChange={this.onInputChange}
@@ -65,9 +68,20 @@ class UserForm extends Component {
                   placeholder="Current City"
                   value={this.state.user.userCity || ""}
                 />
-                <button type="submit">Change</button>
+                <h3>Email</h3>
+                <input
+                  name="userEmail"
+                  onChange={this.onInputChange}
+                  type="text"
+                  placeholder="Email"
+                  value={this.state.user.userEmail || ""}
+                />
+                <button 
+                type="submit">
+                Change
+                </button>
+                </div>
               </form>
-            </div>
           </Modal.Description>
         </Modal.Content>
       </Modal>
