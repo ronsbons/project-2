@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PostDetail from './PostDetail';
-import DeletePostModal from './DeletePostModal'
+import DeletePostModal from './deletePostModal'
 
 class Post extends Component {
 

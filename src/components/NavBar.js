@@ -39,6 +39,7 @@ class NavBar extends Component {
                     handleLogout={this.props.handleLogout}
                     handleInput={this.props.handleInput}
                     fluid
+                    key={1}
                     />
                 </div>
             )
