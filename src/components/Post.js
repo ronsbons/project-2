@@ -12,13 +12,10 @@ class Post extends Component {
       <li data-posts-index={this.props.post.id}>
           <div>
               <span>{this.props.post.postTitle}</span>
-              <a
-              href="#removePost"
-              className="remove"
-              onClick={this.deleteUserPost}
-              >
-              Remove
-              </a>
+
+          <DeletePostModal
+          deletePost={this.deleteUserPost}
+          />
 
           </div>
           <PostDetail 
