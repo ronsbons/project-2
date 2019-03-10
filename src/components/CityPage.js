@@ -86,6 +86,7 @@ class CityPage extends Component {
   };
 
   render() {
+    console.log('CityPage mounting');
     return (
       <div>
         <h4>CityPage component</h4>
@@ -100,7 +101,7 @@ class CityPage extends Component {
           />
         </p>
         <CityPostContainer
-          city={this.props.currentCity}
+          // city={this.props.currentCity}
           user={this.props.user}
           posts={this.state.posts}
           post={this.state.post}

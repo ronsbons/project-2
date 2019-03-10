@@ -3,6 +3,7 @@ import City from './City.js';
 
 class CityList extends Component {
   render() {
+    console.log('CityList mounting');
     let cities = this.props.cities.map( (city) => {
       return (
         <City 
