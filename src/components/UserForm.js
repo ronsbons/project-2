@@ -15,7 +15,7 @@ class UserForm extends Component {
   }
 
   onInputChange = event => {
-    let user = this.state.user;
+    let user = this.props.user;
     user[event.target.name] = event.target.value;
 
     this.setState({
@@ -68,14 +68,6 @@ class UserForm extends Component {
                   placeholder="Current City"
                   value={this.state.user.userCity || ""}
                 />
-                {/* <h3>Email</h3> */}
-                {/* <input
-                  name="userEmail"
-                  onChange={this.onInputChange}
-                  type="text"
-                  placeholder="Email"
-                  value={this.state.user.userEmail || ""}
-                /> */}
                 <button type="submit">Change</button>
               </div>
             </form>
