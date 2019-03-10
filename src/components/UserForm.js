@@ -75,11 +75,8 @@ class UserForm extends Component {
                   type="text"
                   placeholder="Email"
                   value={this.state.user.userEmail || ""}
-                />
-                <button 
-                type="submit">
-                Change
-                </button> */}
+                /> */}
+                <button type="submit">Change</button>
               </div>
             </form>
           </Modal.Description>
