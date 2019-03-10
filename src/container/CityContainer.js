@@ -10,7 +10,7 @@ class CityContainer extends Component {
   }
   state = {
     cities: [],
-    currentCityId: sessionStorage.getItem("currentCity")
+    currentCityId: ""
   };
 
   componentDidMount() {
