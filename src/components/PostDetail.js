@@ -46,15 +46,17 @@ class PostDetail extends Component {
               <a
               href="#editPost"
               >
-                Edit
+
+              <UpdatePostForm
+              post={this.props.post}
+              updatePost={this.props.updatePost}
+              user={this.props.user}
+              />  
+              Edit
               </a>
-              <div
+          <div
               >
-                <UpdatePostForm
-                post={this.props.post}
-                updatePost={this.props.updatePost}
-                user={this.props.user}
-                />
+
               </div>
         </div>
       </Modal.Description>

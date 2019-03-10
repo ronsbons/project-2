@@ -37,20 +37,28 @@ class UpdatePostForm extends Component {
   render() {
     return (
         <div>
-            <form onSubmit={this.onFormSubmit}>
-                <input 
+            <form 
+            onSubmit={this.onFormSubmit}
+            className="mt3"
+            >
+            <div className="flex flex-column">
+            <h3>Post Title</h3>
+            <input 
                 type="text"
                 name="postTitle"
-                // value={(this.state.post.postTitle) || ""}
+                value={(this.state.post.postTitle) || ""}
                 onChange={this.onInputChange}
                 />
+              <h3>Message</h3>
                 <textarea 
                 type="textbody"
                 name="postContent"
                 value={(this.props.post.postContent)}
                 onChange={this.onInputChange}
                 />
-                <button type="submit">Change This Stuff</button>
+
+            </div>
+                
             </form>
       </div>
 
