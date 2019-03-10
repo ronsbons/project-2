@@ -6,8 +6,8 @@ import CityPostsModel from "../models/CityPostsModel.js";
 import Axios from "axios";
 
 class CityPage extends Component {
+  // Notes: Props = currentCityID, user
   state = {
-    currentCityId: this.props.currentCityId,
     currentCity: {
       cityName: "",
       cityPhoto: ""
@@ -18,7 +18,7 @@ class CityPage extends Component {
 
   componentDidMount() {
     console.log(`CityPage mounted`);
-    CityModel.getCurrentCity(this.state.currentCityId)
+    CityModel.getCurrentCity(this.props.currentCityId)
       .then(response => {
         this.setState({
           currentCity: response.data[0]
@@ -58,14 +58,8 @@ class CityPage extends Component {
       });
   };
 
-  reload = event => {
-    event.preventDefault();
-    this.setState({
-      currentCityId: sessionStorage.getItem("currentCity")
-    });
-    console.log(this.state.currentCity);
-
-    CityModel.getCurrentCity(this.state.currentCityId)
+  loadCity() {
+    CityModel.getCurrentCity(this.props.currentCityId)
       .then(response => {
         this.setState({
           currentCity: response.data[0]
@@ -76,31 +70,38 @@ class CityPage extends Component {
       .catch(error => {
         console.log(`retrieving current city error: ${error}`);
       });
-  };
+  }
+
+  componentDidUpdate(prevProps) {
+    // Loads city information if city id is changed.
+    if (this.props.currentCityId !== prevProps.currentCityId) {
+      console.log("city id", this.props);
+      this.loadCity();
+    }
+  }
 
   render() {
     return (
       <div>
-        <button onClick={this.reload}>Reload</button>
         <h4>CityPage component</h4>
-        <h6>ID - {this.state.currentCityId}</h6>
-        <h6>cityName - {this.state.currentCity.cityName}</h6>
+        <h3>ID - {this.props.currentCityId}</h3>
+        <h3>cityName - {this.state.currentCity.cityName}</h3>
         <p>
-          cityPhoto -{" "}
+          cityPhoto - <br />
           <img
             width="500px"
             src={this.state.currentCity.cityPhoto}
             alt={this.state.currentCity.cityName}
           />
         </p>
-        <p>
+        {/* <p>
           hard coded image - <br />
           <img
             width="500px"
             src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1444253482%2FDG2015-san-francisco.jpg%3Fitok%3DMdRJm2Zo&f=1"
             alt="Golden Gate Bridge at dusk"
           />
-        </p>
+        </p> */}
         <CityPostContainer
           city={this.props.currentCity}
           user={this.props.user}
