@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Modal, Image, Header } from 'semantic-ui-react';
+import { Modal, Image, Header } from "semantic-ui-react";
 
 class UserForm extends Component {
   state = {
@@ -50,8 +50,8 @@ class UserForm extends Component {
           <Modal.Description>
             <Header>Profile Details</Header>
 
-              <form onSubmit={this.onFormSubmit}>
-                <div className="flex flex-column">
+            <form onSubmit={this.onFormSubmit}>
+              <div className="flex flex-column">
                 <h3>Name</h3>
                 <input
                   name="userFullName"
@@ -68,8 +68,8 @@ class UserForm extends Component {
                   placeholder="Current City"
                   value={this.state.user.userCity || ""}
                 />
-                <h3>Email</h3>
-                <input
+                {/* <h3>Email</h3> */}
+                {/* <input
                   name="userEmail"
                   onChange={this.onInputChange}
                   type="text"
@@ -79,9 +79,9 @@ class UserForm extends Component {
                 <button 
                 type="submit">
                 Change
-                </button>
-                </div>
-              </form>
+                </button> */}
+              </div>
+            </form>
           </Modal.Description>
         </Modal.Content>
       </Modal>
