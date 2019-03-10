@@ -23,7 +23,9 @@ class Post extends Component {
           </div>
           <PostDetail 
           updatePost={this.props.updatePost}
-          post={this.props.post}/>
+          post={this.props.post}
+          user={this.props.user}
+          />
       </li>
     );
   }

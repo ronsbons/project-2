@@ -61,6 +61,7 @@ updatePost = (postId,postBody) => {
           posts={this.state.posts} 
           deletePost={this.deletePost}
           updatePost={this.updatePost}
+          user={this.props.user}
           />
         </div>
       );

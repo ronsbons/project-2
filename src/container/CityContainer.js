@@ -36,15 +36,15 @@ class CityContainer extends Component {
     return (
       <div className="city-container">
         CityContainer
-        <div className="row">
-          <div className="col s4">
+        <div className="cityContainer">
+          <div className="fl w-50 bg-white tc">
             <CityList
               cities={this.state.cities}
               user={this.props.user}
               loadCity={this.loadCity}
             />
           </div>
-          <div className="col s8">
+          <div className="fl w-50 bg-near-white tc">
             <CityPage
               currentCityId={this.state.currentCityId}
               user={this.props.user}

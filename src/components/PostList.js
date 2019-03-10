@@ -10,6 +10,7 @@ class PostList extends Component {
           post={post}
           deletePost={this.props.deletePost}
           updatePost={this.props.updatePost}
+          user={this.props.user}
            />
       )
     });
