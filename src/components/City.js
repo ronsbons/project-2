@@ -6,7 +6,7 @@ class City extends Component {
     sessionStorage.clear();
     sessionStorage.setItem("currentCity", this.props.city._id);
     console.log("City", this.props.city);
-    this.props.loadCity();
+    this.props.loadCity(); // Update CityContainer
   };
 
   render() {
