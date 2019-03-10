@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CityModel from '../models/CityModel.js';
 import CityList from '../components/CityList.js';
-import CityPage from '../components/CityPage.js';
+// import CityPage from '../components/CityPage.js';
 
 class CityContainer extends Component {
   state = {

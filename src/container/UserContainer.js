@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UserComponent from '../components/UserComponent';
-import UserForm from '../components/UserForm';
+// import UserForm from '../components/UserForm';
 import PostContainer from "./PostContainer";
 import UserModel from '../models/UserModel';
 
