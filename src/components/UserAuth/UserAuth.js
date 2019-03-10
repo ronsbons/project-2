@@ -16,7 +16,7 @@ class UserAuth extends Component{
         return(
             <Modal 
             id="loginModal"
-            trigger={<button>Login/Signup</button>}>
+            trigger={<Button floated='right'>Login/Signup</Button>}>
               <Modal.Header>Please Signup/Login</Modal.Header>
               <Modal.Content >
                     {/* <section id="userAuth" className="bg-gold mw7 center pa4 br2-ns ba b--black-10"> */}
