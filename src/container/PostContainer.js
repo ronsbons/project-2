@@ -56,7 +56,7 @@ updatePost = (postId,postBody) => {
     } else {
       return (
         <div className="postsConstainer">
-          <h2>This is a post container</h2>
+          <h2>Comments</h2>
           <PostList 
           posts={this.state.posts} 
           deletePost={this.deletePost}
