@@ -55,7 +55,7 @@ updatePost = (postId,postBody) => {
       )
     } else {
       return (
-        <div className="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+        <div className="mw6 center bg-white br3 pa3 pa4-ns mv5 ba b--black-10">
           <h2 className='f2 mb2'>Your Posts</h2>
           <PostList 
             posts={this.state.posts} 

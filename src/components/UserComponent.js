@@ -16,7 +16,7 @@ class UserComponent extends Component {
 
     render() {
         return (
-            <div className="mw6 center bg-white br3 pa3 pa3-ns mv6 ba b--black-10">
+            <div className="mw6 center bg-white br3 pa3 pa3-ns mv5 ba b--black-10">
                 <img className='pa1 ba b--black-10 h5 w5' id="userPhoto" src='http://static.nfl.com/static/content/public/static/img/fantasy/transparent/512x512/BRA371156.png'/>
                 {/* <h3>{this.props.user._id}</h3> */}
                 {/* <h3>{this.props.user.userPhoto}</h3> */}

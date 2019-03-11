@@ -8,7 +8,6 @@ class CityPostContainer extends Component {
     } else {
       return (
         <div className="city-post-container">
-          <h5>Posts</h5>
           <PostList
             posts={this.props.posts}
             user={this.props.user}

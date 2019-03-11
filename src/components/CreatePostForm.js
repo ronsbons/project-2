@@ -45,8 +45,9 @@ class CreatePostForm extends Component {
         <ModalContent>
           <ModalDescription>
         <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className='ui form' onSubmit={this.handleSubmit}>
           <h3>Create a New Post</h3>
+          <label htmlFor="title"></label>
           <input
             type="text"
             id="title"
@@ -61,33 +62,13 @@ class CreatePostForm extends Component {
             placeholder="Type your post here"
             onChange={this.handleInput}
           />
-          <button>Submit</button>
+          <button className='ui button orange'>Submit</button>
         </form>
       </div>
           </ModalDescription>
         </ModalContent>
        
       </Modal>
-      // <div>
-      //   <form onSubmit={this.handleSubmit}>
-      //     <h3>Create a New Post</h3>
-      //     <input
-      //       type="text"
-      //       id="title"
-      //       name="postTitle"
-      //       maxLength="200"
-      //       placeholder="Title"
-      //       onChange={this.handleInput}
-      //     />
-      //     <textarea
-      //       name="postContent"
-      //       required
-      //       placeholder="Type your post here"
-      //       onChange={this.handleInput}
-      //     />
-      //     <button>Submit</button>
-      //   </form>
-      // </div>
     );
   }
 }

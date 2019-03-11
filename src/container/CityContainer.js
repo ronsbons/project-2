@@ -35,16 +35,16 @@ class CityContainer extends Component {
 
   render() {
     return (
-      <div className="city-container">
+      <div className="city-container cityComp">
         <div className="cityContainer">
-          <div className="fl w-50 bg-white tc">
+          <div className="fl w-40 tc">
             <CityList
               cities={this.state.cities}
               user={this.props.user}
               loadCity={this.loadCity}
             />
           </div>
-          <div className="fl w-50 bg-near-white tc">
+          <div className="fl w-50 tc">
             <CityPage
               currentCityId={this.state.currentCityId}
               user={this.props.user}
