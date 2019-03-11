@@ -12,16 +12,14 @@ class UserForm extends Component {
     this.setState({
       user: this.props.user
     });
-  }
+  };
 
   onInputChange = event => {
     let user = this.props.user;
     user[event.target.name] = event.target.value;
-
     this.setState({
       user: user
     });
-
     console.log(this.state.user);
   };
 

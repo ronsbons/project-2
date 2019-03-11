@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PostsModel from "../models/PostsModel";
-import PostList from "../components/PostList";
+import React, { Component } from 'react';
+import PostsModel from '../models/PostsModel';
+import PostList from '../components/PostList';
 
 class PostContainer extends Component {
   state = {
@@ -12,7 +12,7 @@ class PostContainer extends Component {
 
   componentDidMount() {
     this.fetchData();
-  }
+  };
 
   fetchData() {
     PostsModel.getUserPosts(this.state.userId).then(res => {
@@ -51,17 +51,17 @@ updatePost = (postId,postBody) => {
   render() {
     if (this.state.post === null) {
       return (
-        <div className="postsConstainer" />
+        <div className='postsContainer' />
       )
     } else {
       return (
-        <div className="postsConstainer">
-          <h2>Comments</h2>
+        <div className='postsContainer'>
+          <h2>Your Posts</h2>
           <PostList 
-          posts={this.state.posts} 
-          deletePost={this.deletePost}
-          updatePost={this.updatePost}
-          user={this.props.user}
+            posts={this.state.posts} 
+            deletePost={this.deletePost}
+            updatePost={this.updatePost}
+            user={this.props.user}
           />
         </div>
       );

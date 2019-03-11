@@ -74,4 +74,4 @@ class Postform extends Component {
   }
 }
 
-export default Postform;
+// export default Postform;
