@@ -51,12 +51,12 @@ updatePost = (postId,postBody) => {
   render() {
     if (this.state.post === null) {
       return (
-        <div className="postsConstainer" />
+        <div className="" />
       )
     } else {
       return (
-        <div className="postsConstainer">
-          <h2>Comments</h2>
+        <div className="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+          <h2 className='f2 mb2'>Comments</h2>
           <PostList 
           posts={this.state.posts} 
           deletePost={this.deletePost}

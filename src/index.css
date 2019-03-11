@@ -1,5 +1,18 @@
+.frisco {
+  height: 50vh;
+  background-image: url(https://static1.squarespace.com/static/5310c08be4b08602cbfa1763/t/5a8c0f04c83025f59a101e9f/1519763109249/LB-CulturalCities-CultureTrip.jpg?format=1500w);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.opacity {
+  opacity: .2;
+}
+
+
+
 .highlight-header {
-    background-color: ;
+    background-color: #f78923 ;
     line-height: 60%;
     left: 0px;
     width: 100%;
@@ -7,9 +20,6 @@
     content: '';
 }
 
-#loginModal {
-    background: orange;
-}
 
 .letterY {
     color: rgb(34, 34, 34);
@@ -53,7 +63,7 @@ ul {
   }
   
   li:hover a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   /* User Page */
@@ -66,9 +76,12 @@ ul {
       margin-right: 1em;
   }
 
-  .userContainer {
-    display: flex;
-    width: 100%;
+  .userComp {
+    background-image: url(https://cdn.theculturetrip.com/wp-content/uploads/2017/07/hcti-078-lukebrookes_travelapps.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: scroll;
   }
 
 
@@ -82,9 +95,6 @@ ul {
   }
   
   a:hover a:hover {
-      text-decoration: underline;
+      text-decoration: none;
       cursor:pointer;
     }
-
- 
-

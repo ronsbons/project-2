@@ -19,15 +19,15 @@ class UserContainer extends Component {
   render() {
 
     return (
-      <div className="userContainer">
-      <div className="fl w-50 bg-near-white tc">
+      <div className="userContainer userComp">
+      <div className="fl w-50 tc">
         <UserComponent 
         className="userComponent"
         user={this.state.user} 
         updateUser={this.updateUser}
          />
       </div>
-      <div className="fl w-50 bg-light-gray tc" >
+      <div className="fl w-50 tc" >
         <PostContainer 
         className="postContainer"
         user={this.props.user}
