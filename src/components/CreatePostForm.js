@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Modal, ModalHeader, ModalContent, ModalDescription} from "semantic-ui-react";
 
 class CreatePostForm extends Component {
   state = {
@@ -35,22 +36,17 @@ class CreatePostForm extends Component {
   };
 
   render() {
+    
     return (
-      <div>
-        <form className='ui form ' onSubmit={this.handleSubmit}>
+      <Modal
+      trigger={<button>+</button>}
+      >
+        <ModalHeader>Create A Post</ModalHeader>
+        <ModalContent>
+          <ModalDescription>
+        <div>
+        <form className='ui form' onSubmit={this.handleSubmit}>
           <h3>Create a New Post</h3>
-
-          {/* <label htmlFor="city">City</label> */}
-          {/* <select
-            id="city"
-            name="city"
-            onChange={this.handleInput}
-            style={{ display: "block" }}
-          >
-            <option value="">Choose City</option>
-            <option value="5c80599dd1a625547d631927">Wisconsin</option>
-            <option value="5c80599dd1a625547d631926">Colorado</option>
-          </select> */}
           <label htmlFor="title"></label>
           <input
             type="text"
@@ -69,6 +65,10 @@ class CreatePostForm extends Component {
           <button className='ui button orange'>Submit</button>
         </form>
       </div>
+          </ModalDescription>
+        </ModalContent>
+       
+      </Modal>
     );
   }
 }

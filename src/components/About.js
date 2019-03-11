@@ -23,7 +23,7 @@ const About = () => {
                     <dd className="f3 fw6 ml0">∞</dd>
                     </dl>
                     <dl className="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
-                    <dd className="f6 fw4 ml0">Favorite Dog</dd>
+                    <dd className="f6 fw4 ml0">Favorite Place</dd>
                     <dd className="f3 fw6 ml0">All of Them</dd>
                     </dl>
                     <dl className="fl fn-l w-50 dib-l w-auto-l lh-title">

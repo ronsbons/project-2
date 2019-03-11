@@ -36,7 +36,7 @@ class CityContainer extends Component {
   render() {
     return (
       <div className="city-container cityComp">
-        <div className="cityContainer  ">
+        <div className="cityContainer">
           <div className="fl w-40 tc">
             <CityList
               cities={this.state.cities}

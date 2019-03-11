@@ -7,10 +7,39 @@
   background-position: fixed;
 }
 
+/* styling2 */
  /* Floats */
 .float-right {
   float: right;
+/* styling2 */
+
+/* master */
+.plane {
+  height: 50vh;
+  background-image: url(https://static1.squarespace.com/static/5310c08be4b08602cbfa1763/t/587f36186a49633c1be60e9f/1484731938939/?format=750w
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.paris {
+  height: 50vh;
+  background-image: url(https://static1.squarespace.com/static/5310c08be4b08602cbfa1763/t/5bab90efc83025f0e1a54caa/1537970437218/LukeBrookes_CultureTrip-Waterlilies?format=1000w);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.relaxing {
+  height: 50vh;
+  background-image: url(https://static1.squarespace.com/static/5310c08be4b08602cbfa1763/t/5b598f1b758d467ac66a1349/1532596007729/LukeBrookes-NotOnSunday.jpg?format=1500w);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.opacity {
+  opacity: .2;
+}
+/* master */
 
 /* Header Title */
 .highlight-header {
@@ -86,7 +115,8 @@ a {
     display: flex;
     width: 100%;
   }
-    
+
+/* styling2 */
  /* Components */
  .userComp {
   background-image: url(https://cdn.theculturetrip.com/wp-content/uploads/2017/07/hcti-078-lukebrookes_travelapps.jpg);
@@ -102,4 +132,21 @@ a {
   background-repeat: no-repeat;
   height: 170vh;
   position: scroll;
+  
+/* styling2 */
+  
+/* master */
+  a  {
+      color:red    
+  }
+  
+  a:hover a:hover {
+      text-decoration: none;
+      cursor:pointer;
+    }
+
+
+#userProfileModal {
+  display: none;
 }
+/* master */
