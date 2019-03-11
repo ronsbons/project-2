@@ -50,9 +50,9 @@ class UserForm extends Component {
           <Modal.Description>
             <Header>Profile Details</Header>
 
-            <form onSubmit={this.onFormSubmit}>
+            <form className='ui form' onSubmit={this.onFormSubmit}>
               <div className="flex flex-column">
-                <h3>Name</h3>
+                <h3 className='f3'>Name</h3>
                 <input
                   name="userFullName"
                   onChange={this.onInputChange}
@@ -60,7 +60,7 @@ class UserForm extends Component {
                   placeholder="Name"
                   value={this.state.user.userFullName || ""}
                 />
-                <h3>Home City</h3>
+                <h3 className='f3'>Home City</h3>
                 <input
                   name="userCity"
                   onChange={this.onInputChange}
@@ -68,7 +68,8 @@ class UserForm extends Component {
                   placeholder="Current City"
                   value={this.state.user.userCity || ""}
                 />
-                <button type="submit">Change</button>
+                <br />
+                <button className='ui button orange' type="submit">Save Changes</button>
               </div>
             </form>
           </Modal.Description>
