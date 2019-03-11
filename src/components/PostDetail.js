@@ -17,14 +17,9 @@ class PostDetail extends Component {
         <Modal.Content>
           <Modal.Description>
             <div>
-<<<<<<< HEAD
               <Header >{this.props.post.postTitle}</Header>
               <p className='black'>{this.props.post.postContent}</p>
               {/* <span>{this.props.post.user.userEmail}</span> */}
-=======
-              <Header>{this.props.post.postTitle}</Header>
-              <p>{this.props.post.postContent}</p>
->>>>>>> 9f457f247d567e46ac8b3707990d1af08dae3cb3
             </div>
 
             <div>

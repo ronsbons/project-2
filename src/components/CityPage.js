@@ -87,14 +87,9 @@ class CityPage extends Component {
   render() {
     console.log('CityPage mounting');
     return (
-<<<<<<< HEAD
       <div className='tc mw10 center bg-white br3 pa3 pa3-ns mv5 ba b--black-10'>
         <h3>ID - {this.props.currentCityId}</h3>
         <h3 className='f2'> {this.state.currentCity.cityName}</h3>
-=======
-      <div>
-        <h3>{this.state.currentCity.cityName}</h3>
->>>>>>> 9f457f247d567e46ac8b3707990d1af08dae3cb3
         <p>
           <br />
           <img className='pa1 ba b13--black-10 h15 w15'
