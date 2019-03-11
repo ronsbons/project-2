@@ -19,22 +19,6 @@ class UserContainer extends Component {
   render() {
 
     return (
-<<<<<<< HEAD
-      <div className="userContainer">
-        <div className="fl w-50 bg-near-white tc">
-          <UserComponent 
-          className="userComponent"
-          user={this.state.user} 
-          updateUser={this.updateUser}
-           />
-        </div>
-        <div className="fl w-50 bg-light-gray tc" >
-          <PostContainer 
-          className="postContainer"
-          user={this.props.user}
-          />
-        </div>
-=======
       <div className="userContainer userComp">
       <div className="fl w-50 tc">
         <UserComponent 
@@ -50,7 +34,6 @@ class UserContainer extends Component {
         />
       </div>
 
->>>>>>> styling
       </div>
     );
   }

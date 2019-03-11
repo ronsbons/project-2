@@ -54,23 +54,6 @@ class UserAuth extends Component{
 
                             </form> 
                         </div>
-<<<<<<< HEAD
-                    </Modal.Content>
-                    <Modal.Header>Please Signup/Login</Modal.Header>
-                  <Modal.Content >
-                <div className="bg-gold mw7 center pa4 br2-ns ba b--black-10">
-                    <h4>Login</h4>
-                      <form
-                      onSubmit={handleSignup}
-                      >
-                      <span
-                       className="errorMessage"
-                       >
-                       {signUpError}
-                       </span>
-
-                        <input 
-=======
 
                    
                 <div className="tc">
@@ -81,7 +64,6 @@ class UserAuth extends Component{
                         <div className='ui left icon input'>
                         <i className='user icon'></i>
                         <input className=''
->>>>>>> styling
                         type="text"
                         name="email"
                         placeholder="Email"
@@ -107,22 +89,16 @@ class UserAuth extends Component{
                 </div>
             </Modal.Content>
         </Modal>
-<<<<<<< HEAD
-=======
 
             
 
 
                     
             
->>>>>>> styling
         )
     }
 }
 
-<<<<<<< HEAD
-export default UserAuth;
-=======
 
 export default UserAuth;
 
@@ -206,4 +182,3 @@ export default UserAuth;
 //                 </div>
 //             </Modal.Content>
 //         </Modal>
->>>>>>> styling
