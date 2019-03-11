@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { TableBody } from 'semantic-ui-react';
 
 class UpdatePostForm extends Component {
-  state={
+  state = {
     post: {},
-  }
+  };
 
   componentDidMount() {
     console.log('POST');
@@ -12,7 +12,7 @@ class UpdatePostForm extends Component {
     this.setState({
         post: this.props.post
     });
-  }
+  };
 
   onInputChange = (event) => {
     let post = this.state.post;
@@ -21,7 +21,7 @@ class UpdatePostForm extends Component {
     this.setState({
       post: post
     });
-  }
+  };
 
   onFormSubmit = (event) => {
     event.preventDefault()
@@ -31,40 +31,36 @@ class UpdatePostForm extends Component {
           postTitle:'',
           postContent:''
       }
-    })
-  }
+    });
+  };
 
   render() {
     return (
         <div>
             <form 
-            onSubmit={this.onFormSubmit}
-            className="mt3"
+              onSubmit={this.onFormSubmit}
+              className="mt3"
             >
-            <div className="flex flex-column">
-            <h3>Post Title</h3>
-            <input 
-                type="text"
-                name="postTitle"
-                value={(this.state.post.postTitle) || ""}
-                onChange={this.onInputChange}
+              <div className="flex flex-column">
+                <h3>Post Title</h3>
+                <input 
+                  type="text"
+                  name="postTitle"
+                  value={(this.state.post.postTitle) || ""}
+                  onChange={this.onInputChange}
                 />
-              <h3>Message</h3>
+                <h3>Message</h3>
                 <textarea 
-                type="textbody"
-                name="postContent"
-                value={(this.props.post.postContent)}
-                onChange={this.onInputChange}
+                  type="textbody"
+                  name="postContent"
+                  value={(this.props.post.postContent)}
+                  onChange={this.onInputChange}
                 />
-
-            </div>
-                
+              </div>
             </form>
-      </div>
-
-
+          </div>
     );
   }
-}
+};
 
 export default UpdatePostForm;

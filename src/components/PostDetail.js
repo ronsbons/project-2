@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Button, Header, Image, Modal } from "semantic-ui-react";
-import UpdatePostForm from "./UpdatePostForm";
+import React, { Component } from 'react';
+import { Button, Header, Image, Modal } from 'semantic-ui-react';
+import UpdatePostForm from './UpdatePostForm';
 
 class PostDetail extends Component {
   handleOpen = () => {
@@ -14,17 +14,11 @@ class PostDetail extends Component {
     return (
       <Modal trigger={<a>View</a>}>
         <Modal.Header>City Post</Modal.Header>
-        <Modal.Content image>
-          <Image
-            wrapped
-            size="medium"
-            src="https://www.aaronstoychest.co.uk/wp-content/uploads/2017/09/59754444.jpg"
-          />
+        <Modal.Content>
           <Modal.Description>
             <div>
               <Header>{this.props.post.postTitle}</Header>
               <p>{this.props.post.postContent}</p>
-              {/* <span>{this.props.post.user.userEmail}</span> */}
             </div>
 
             <div>
@@ -34,7 +28,7 @@ class PostDetail extends Component {
                   updatePost={this.props.updatePost}
                   user={this.props.user}
                 />
-                Edit
+                Submit Changes to Your Post
               </a>
               <div />
             </div>

@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import CityModel from "../models/CityModel.js";
-import CityList from "../components/CityList.js";
-import CityPage from "../components/CityPage.js";
+import React, { Component } from 'react';
+import CityModel from '../models/CityModel.js';
+import CityList from '../components/CityList.js';
+import CityPage from '../components/CityPage.js';
 
 class CityContainer extends Component {
   constructor() {
     super();
     this.loadCity = this.loadCity.bind(this);
-  }
+  };
+
   state = {
     cities: [],
     currentCityId: '5c8597b55ed36e00172d909d',
@@ -22,15 +23,15 @@ class CityContainer extends Component {
         console.log(this.state.cities);
       })
       .catch(error => {
-        console.log("retrieiving all cities error: ", error);
+        console.log('retrieiving all cities error: ', error);
       });
-  }
+  };
 
   loadCity() {
     this.setState({
-      currentCityId: sessionStorage.getItem("currentCity")
+      currentCityId: sessionStorage.getItem('currentCity')
     });
-  }
+  };
 
   render() {
     return (

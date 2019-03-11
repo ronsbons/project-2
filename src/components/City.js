@@ -12,8 +12,6 @@ class City extends Component {
   render() {
     return (
       <div>
-        <h5>City component</h5>
-        <p>{this.props.city.cityName}</p>
         <button onClick={this.changeCity}>{this.props.city.cityName}</button>
       </div>
     );

@@ -39,19 +39,6 @@ class CreatePostForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <h3>Create a New Post</h3>
-
-          {/* <label htmlFor="city">City</label> */}
-          {/* <select
-            id="city"
-            name="city"
-            onChange={this.handleInput}
-            style={{ display: "block" }}
-          >
-            <option value="">Choose City</option>
-            <option value="5c80599dd1a625547d631927">Wisconsin</option>
-            <option value="5c80599dd1a625547d631926">Colorado</option>
-          </select> */}
-          <label htmlFor="title">Title</label>
           <input
             type="text"
             id="title"
