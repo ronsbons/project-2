@@ -4,15 +4,16 @@ import UserForm from './UserForm';
 class UserComponent extends Component {
     state = {
         open:false
-    }
+    };
 
-    handleClose= () => {
+    handleClose = () => {
         document.getElementById('userProfileModal').style.display='none';
-    }
+    };
 
-    handleOpen= () => {
+    handleOpen = () => {
         document.getElementById('userProfileModal').style.display='block';
-    }
+    };
+
     render() {
         return (
             <div className="mw6 center bg-white br3 pa3 pa3-ns mv5 ba b--black-10">

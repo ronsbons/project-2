@@ -39,6 +39,7 @@ class CreatePostForm extends Component {
       <div>
         <form className='ui form ' onSubmit={this.handleSubmit}>
           <h3>Create a New Post</h3>
+<<<<<<< HEAD
 
           {/* <label htmlFor="city">City</label> */}
           {/* <select
@@ -52,6 +53,8 @@ class CreatePostForm extends Component {
             <option value="5c80599dd1a625547d631926">Colorado</option>
           </select> */}
           <label htmlFor="title"></label>
+=======
+>>>>>>> 9f457f247d567e46ac8b3707990d1af08dae3cb3
           <input
             type="text"
             id="title"

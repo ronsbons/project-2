@@ -162,8 +162,6 @@ class App extends Component {
               }
             }}
           />
-
-          {/* https://stackoverflow.com/questions/45898789/react-router-pass-param-to-component */}
         </Switch>
       </div>
     );

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PostsModel from "../models/PostsModel";
-import PostList from "../components/PostList";
+import React, { Component } from 'react';
+import PostsModel from '../models/PostsModel';
+import PostList from '../components/PostList';
 
 class PostContainer extends Component {
   state = {
@@ -12,7 +12,7 @@ class PostContainer extends Component {
 
   componentDidMount() {
     this.fetchData();
-  }
+  };
 
   fetchData() {
     PostsModel.getUserPosts(this.state.userId).then(res => {
@@ -58,10 +58,10 @@ updatePost = (postId,postBody) => {
         <div className="mw6 center bg-white br3 pa3 pa4-ns mv5 ba b--black-10">
           <h2 className='f2 mb2'>Comments</h2>
           <PostList 
-          posts={this.state.posts} 
-          deletePost={this.deletePost}
-          updatePost={this.updatePost}
-          user={this.props.user}
+            posts={this.state.posts} 
+            deletePost={this.deletePost}
+            updatePost={this.updatePost}
+            user={this.props.user}
           />
         </div>
       );

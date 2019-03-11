@@ -8,12 +8,12 @@ class Post extends Component {
     console.log(this.props);
     this.props.deletePost(this.props.post);
   };
+
   render() {
     return (
       <li data-posts-index={this.props.post.id}>
         <div>
           <span>{this.props.post.postTitle}</span>
-
           <DeletePostModal deleteUserPost={this.deleteUserPost} />
         </div>
         <PostDetail

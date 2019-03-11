@@ -11,7 +11,7 @@ class CityList extends Component {
           city={city}
           user={this.props.user} 
           loadCity={this.props.loadCity} 
-          />
+        />
       )
     });
 
@@ -22,7 +22,7 @@ class CityList extends Component {
       </ul> 
       </div>
     );
-  }
-}
+  };
+};
 
 export default CityList;
