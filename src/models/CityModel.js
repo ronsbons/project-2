@@ -1,7 +1,11 @@
 import axios from 'axios';
 
+<<<<<<< HEAD
 const endPoint = `https://stark-chamber-26373.herokuapp.com/cities`;
 // const endPoint = 'http://localhost:3001/cities';
+=======
+const endPoint = 'http://localhost:3001/api/cities';
+>>>>>>> styling
 
 class CityModel {
   static allCities() {

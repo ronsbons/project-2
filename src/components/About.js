@@ -3,24 +3,36 @@ import React from 'react';
 const About = () => {
     return (
         <div className='tc'>
-            <h1>About.</h1>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p> 
-            <p>
-            Lorem ipsum dolor amet heirloom raw denim drinking vinegar ramps, intelligentsia hexagon forage umami letterpress. 
-            Umami mlkshk tumeric, hella bicycle rights cold-pressed echo park keytar taiyaki health goth whatever migas. 
-            Intelligentsia offal truffaut 90's, jianbing trust fund pinterest tacos hot chicken man braid twee deep v. Godard humblebrag green juice mixtape pop-up 90's asymmetrical pour-over. 
-            XOXO affogato gochujang, crucifix ethical letterpress flannel. Subway tile sartorial DIY vice before they sold out plaid chartreuse waistcoat. 
-            Health goth bicycle rights vinyl meggings authentic pitchfork plaid pork belly before they sold out enamel pin seitan 8-bit.
-            </p> 
-            <p>
-            Occupy hashtag gochujang bitters, hell of af cliche. VHS photo booth organic pug, vape vegan dreamcatcher salvia. Artisan yr raw denim pop-up vexillologist health goth fam. Waistcoat kitsch godard heirloom direct trade, live-edge bushwick 8-bit wolf. Leggings mixtape shaman meh, selfies celiac pickled raclette waistcoat glossier craft beer church-key raw denim. Wolf listicle cronut lumbersexual man braid jianbing polaroid quinoa vinyl meh forage normcore. Pork belly YOLO butcher, ennui franzen fanny pack jianbing.
-
-            Oh. You need a little dummy text for your mockup? How quaint.
-
-            I bet you’re still using Bootstrap too…
-            </p>
+            <div className="pa3 pa4-ns" data-name="slab-stat-small">
+                <h3 className="f6 ttu tracked">Today</h3>
+                <div className="cf">
+                    <dl className="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                    <dd className="f6 fw4 ml0">Cities</dd>
+                    <dd className="f3 fw6 ml0">50,000+</dd>
+                    </dl>
+                    <dl className="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                    <dd className="f6 fw4 ml0">Countries</dd>
+                    <dd className="f3 fw6 ml0">165</dd>
+                    </dl>
+                    <dl className="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                    <dd className="f6 fw4 ml0">Continents</dd>
+                    <dd className="f3 fw6 ml0">7</dd>
+                    </dl>
+                    <dl className="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                    <dd className="f6 fw4 ml0">Possibilities</dd>
+                    <dd className="f3 fw6 ml0">∞</dd>
+                    </dl>
+                    <dl className="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                    <dd className="f6 fw4 ml0">Favorite Dog</dd>
+                    <dd className="f3 fw6 ml0">All of Them</dd>
+                    </dl>
+                    <dl className="fl fn-l w-50 dib-l w-auto-l lh-title">
+                    <dd className="f6 fw4 ml0">App Downloads</dd>
+                    <dd className="f3 fw6 ml0">1,200</dd>
+                    </dl>
+                </div>
+            </div>
+           
         </div>
     )
 }

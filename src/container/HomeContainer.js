@@ -5,7 +5,7 @@ import Carousel from '../components/Carousel';
 class HomeContainer extends Component {
     render(){
         return(
-            <div>
+            <div className='homeCont'>
                 <Carousel/>    
                 <About />
             </div>

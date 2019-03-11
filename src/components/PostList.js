@@ -15,7 +15,7 @@ class PostList extends Component {
       )
     });
     return (
-    <ul>
+    <ul className='fw2 gray mt0'>
     {posts}
     </ul> 
       );
