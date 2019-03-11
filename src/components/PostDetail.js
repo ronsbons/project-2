@@ -22,13 +22,13 @@ class PostDetail extends Component {
           />
           <Modal.Description>
             <div>
-              <Header>{this.props.post.postTitle}</Header>
-              <p>{this.props.post.postContent}</p>
+              <Header >{this.props.post.postTitle}</Header>
+              <p className='black'>{this.props.post.postContent}</p>
               {/* <span>{this.props.post.user.userEmail}</span> */}
             </div>
 
             <div>
-              <a href="#editPost">
+              <a className='black' href="#editPost">
                 <UpdatePostForm
                   post={this.props.post}
                   updatePost={this.props.updatePost}
