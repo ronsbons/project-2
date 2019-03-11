@@ -87,11 +87,12 @@ class CityPage extends Component {
   render() {
     console.log('CityPage mounting');
     return (
-      <div className='tc mw10 center bg-white br3 pa3 pa3-ns mv5 ba b--black-10>
+      <div className="tc mw10 center bg-white br3 pa3 pa3-ns mv5 ba b--black-10">
 
         <h3>{this.state.currentCity.cityName}</h3>
         <p>
-          <img className='pa1 ba b13--black-10 h15 w15'
+          <img
+            className="pa1 ba b13--black-10 h15 w15"
             width="500px"
             src={this.state.currentCity.cityPhoto}
             alt={this.state.currentCity.cityName}
