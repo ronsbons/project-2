@@ -16,7 +16,6 @@ const Carousel = () => {
       };
     return (
         <div>
-        <h2> Single Item</h2>
         <Slider {...settings}>
           <div className="frisco">
           </div>
