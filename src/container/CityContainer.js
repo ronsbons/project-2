@@ -36,7 +36,6 @@ class CityContainer extends Component {
   render() {
     return (
       <div className="city-container">
-        CityContainer
         <div className="cityContainer">
           <div className="fl w-50 bg-white tc">
             <CityList
