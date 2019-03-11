@@ -12,8 +12,6 @@ class CityPostContainer extends Component {
           <PostList
             posts={this.props.posts}
             user={this.props.user}
-            deletePost={this.props.deletePost}
-            updatePost={this.props.updatePost}
           />
         </div>
       );
