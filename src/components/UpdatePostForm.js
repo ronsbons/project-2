@@ -63,6 +63,7 @@ class UpdatePostForm extends Component {
                   onChange={this.onInputChange}
                 />
               </div>
+              <input type="submit">Submit</input>
             </form>
 
           
