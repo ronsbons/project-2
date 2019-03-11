@@ -16,9 +16,11 @@ class CityList extends Component {
     });
 
     return (
-      <ul>
+      <div className='tc mw5 center bg-white br3 pa3 pa3-ns mv5 ba b--black-10'>
+      <ul className=''>
         {cities}
       </ul> 
+      </div>
     );
   }
 }

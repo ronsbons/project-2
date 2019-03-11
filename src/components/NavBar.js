@@ -10,15 +10,15 @@ class NavBar extends Component {
         let navBarItems = [];
         if(this.props.isLoggedIn){
             navBarItems.push(
-            <div>
-                <div>
-                    <button onClick={this.props.handleLogout}>
+            <div className="float-right">
+                <div  className='ui large buttons'>
+                    <button className='ui button orange' onClick={this.props.handleLogout}>
                         Logout
                     </button>
                 </div>
 
-                <div >
-                   <Link to="/cities"> Cities </Link>  
+                <div className='green' >
+                   <Link className='right floated green' to="/cities"> Cities </Link>  
                 </div>
                 
                 <div>
@@ -46,7 +46,7 @@ class NavBar extends Component {
         }
 
         return(
-            <div className="tc pa3 pa4-ns">
+            <div className="pa3 pa4-ns">
             
                 <div className='right floated'>
                         {navBarItems}

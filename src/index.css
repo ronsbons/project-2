@@ -3,13 +3,17 @@
   background-image: url(https://static1.squarespace.com/static/5310c08be4b08602cbfa1763/t/5a8c0f04c83025f59a101e9f/1519763109249/LB-CulturalCities-CultureTrip.jpg?format=1500w);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: fixed;
 }
 
 .opacity {
   opacity: .2;
 }
 
+.float-right {
+  float: right;
 
+}
 
 .highlight-header {
     background-color: #f78923 ;
@@ -81,6 +85,14 @@ ul {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    position: scroll;
+  }
+
+  .cityComp {
+    background-image: url(https://cdn.theculturetrip.com/wp-content/uploads/2017/07/hcti-078-lukebrookes_travelapps.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 170vh;
     position: scroll;
   }
 

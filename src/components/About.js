@@ -4,7 +4,7 @@ const About = () => {
     return (
         <div className='tc'>
             <div className="pa3 pa4-ns" data-name="slab-stat-small">
-                <h3 className="f6 ttu tracked">Today</h3>
+                <h3 className="f5 tracked">Wayfarer is a platform designed with the travel community in mind. Through the use of this application, users share posts or tips about their favorite locations around the world.</h3>
                 <div className="cf">
                     <dl className="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
                     <dd className="f6 fw4 ml0">Cities</dd>

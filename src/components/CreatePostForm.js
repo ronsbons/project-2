@@ -37,7 +37,7 @@ class CreatePostForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className='ui form ' onSubmit={this.handleSubmit}>
           <h3>Create a New Post</h3>
 
           {/* <label htmlFor="city">City</label> */}
@@ -51,7 +51,7 @@ class CreatePostForm extends Component {
             <option value="5c80599dd1a625547d631927">Wisconsin</option>
             <option value="5c80599dd1a625547d631926">Colorado</option>
           </select> */}
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title"></label>
           <input
             type="text"
             id="title"
@@ -66,7 +66,7 @@ class CreatePostForm extends Component {
             placeholder="Type your post here"
             onChange={this.handleInput}
           />
-          <button>Submit</button>
+          <button className='ui button orange'>Submit</button>
         </form>
       </div>
     );

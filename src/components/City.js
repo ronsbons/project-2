@@ -11,10 +11,10 @@ class City extends Component {
 
   render() {
     return (
-      <div>
-        <h5>City component</h5>
-        <p>{this.props.city.cityName}</p>
-        <button onClick={this.changeCity}>{this.props.city.cityName}</button>
+      <div >
+        <h5></h5>
+        <p className='f3'>{this.props.city.cityName}</p>
+        <button className='ui button orange small' onClick={this.changeCity}>{this.props.city.cityName}</button>
       </div>
     );
   }
