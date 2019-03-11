@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# App Name: Wayfarer
 
-## Available Scripts
+Wayfarer is a platform designed with the travel community in mind. Through the use of this application, users share posts or tips about their favorite locations around the world.
 
-In the project directory, you can run:
+_March Team_
+San Francisco, CA
 
-### `npm start`
+- [Wayfarer Website](https://safe-beach-22791.herokuapp.com/)
+- [Backend Repository](https://github.com/ronsbons/project-2-wayfarer-backend)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- [React](https://reactjs.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [React Slick](https://react-slick.neostack.com/)
+- [Semantic UI](https://semantic-ui.com/)
+- [Tachyons](https://tachyons.io/)
+- [Node.js](https://nodejs.org/en/)
+- [MongoDB](https://www.mongodb.com/)/ [Mongoose](https://www.npmjs.com/package/mongoose)
+- [express NPM Package](https://www.npmjs.com/package/express)
+- [body-parser NPM Package](https://www.npmjs.com/package/body-parser)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Existing Features
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Landing Page
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- Authentication (User Log-In & Sign-Up)
+- Redirect to Dynamic URL
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Public Page
 
-### `npm run eject`
+- Public Page Dynamic Layout
+- User Profile with edit name and city Feature
+- User Feed
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Cities Page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Cities Page with Dynamic Layout
+- Buttons using sessionStorage
+- Post Comments Feature (view, create, edit, & delete)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Planned Features
 
-## Learn More
+Changes we would make to our project if we continued to work on it:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Have user see "default" profile photo on their profile page before adding their own photo
+- Include functionality for user to update their profile photo
+- Send user a welcome email after creating an account
+- Include pretty urls (e.g. "/cities/san-francisco") to visit city pages and user profile pages
+- Add an error message when form validations fails
+- View only the 10 most recent posts on a city page (pagination), with "Next" 10 and "Previous" 10 buttons
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+##### Screenshot
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<img width="651" alt="bcrypt code highlight" src="https://user-images.githubusercontent.com/46200110/54101947-81dc8380-4383-11e9-911e-027a9443e074.png">
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+#### Biggest Wins and Challenges
 
-### Making a Progressive Web App
+Wins
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- User Log-In & Sign-Up Authentication.
+- Dynamic Cities Page Layout with sessionStorage.
+- UserFeed.
 
-### Advanced Configuration
+Challenges
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Dynamic Cities Page Layout.
+- UserFeed.
+- Heroku.
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
