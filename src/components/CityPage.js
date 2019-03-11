@@ -88,14 +88,20 @@ class CityPage extends Component {
     console.log('CityPage mounting');
     return (
       <div>
+
         <h3>{this.state.currentCity.cityName}</h3>
         <p>
-          cityPhoto - <br />
           <img
             width="500px"
             src={this.state.currentCity.cityPhoto}
             alt={this.state.currentCity.cityName}
           />
+
+        <CreatePostForm
+          city={this.props.currentCityId}
+          user={this.props.user}
+          createPost={this.createPost}
+        />
         </p>
         <CityPostContainer
           // city={this.props.currentCity}
@@ -103,11 +109,7 @@ class CityPage extends Component {
           posts={this.state.posts}
           post={this.state.post}
         />
-        <CreatePostForm
-          city={this.props.currentCityId}
-          user={this.props.user}
-          createPost={this.createPost}
-        />
+        
       </div>
     );
   };

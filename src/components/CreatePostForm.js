@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Modal, ModalHeader, ModalContent, ModalDescription} from "semantic-ui-react";
 
 class CreatePostForm extends Component {
   state = {
@@ -35,8 +36,15 @@ class CreatePostForm extends Component {
   };
 
   render() {
+    
     return (
-      <div>
+      <Modal
+      trigger={<button>+</button>}
+      >
+        <ModalHeader>Create A Post</ModalHeader>
+        <ModalContent>
+          <ModalDescription>
+        <div>
         <form onSubmit={this.handleSubmit}>
           <h3>Create a New Post</h3>
           <input
@@ -56,6 +64,30 @@ class CreatePostForm extends Component {
           <button>Submit</button>
         </form>
       </div>
+          </ModalDescription>
+        </ModalContent>
+       
+      </Modal>
+      // <div>
+      //   <form onSubmit={this.handleSubmit}>
+      //     <h3>Create a New Post</h3>
+      //     <input
+      //       type="text"
+      //       id="title"
+      //       name="postTitle"
+      //       maxLength="200"
+      //       placeholder="Title"
+      //       onChange={this.handleInput}
+      //     />
+      //     <textarea
+      //       name="postContent"
+      //       required
+      //       placeholder="Type your post here"
+      //       onChange={this.handleInput}
+      //     />
+      //     <button>Submit</button>
+      //   </form>
+      // </div>
     );
   }
 }
