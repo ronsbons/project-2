@@ -34,14 +34,20 @@ class UpdatePostForm extends Component {
     });
   };
 
+  handleClose = () => {
+    document.getElementById("lou").style.display = "none";
+  };
+
   render() {
     return (
         <div>
             <form 
               onSubmit={this.onFormSubmit}
               className="mt3"
+              id="userProfileModal"
             >
-              <div className="flex flex-column">
+             <div className="flex flex-column"
+              >
                 <h3>Post Title</h3>
                 <input 
                   type="text"
@@ -58,6 +64,8 @@ class UpdatePostForm extends Component {
                 />
               </div>
             </form>
+
+          
           </div>
     );
   }

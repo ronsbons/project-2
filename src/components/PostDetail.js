@@ -3,12 +3,12 @@ import { Button, Header, Image, Modal } from 'semantic-ui-react';
 import UpdatePostForm from './UpdatePostForm';
 
 class PostDetail extends Component {
+
   handleOpen = () => {
     document.getElementById("userProfileModal").style.display = "block";
   };
-  handleClose = () => {
-    document.getElementById("lou").style.display = "none";
-  };
+
+
 
   render() {
     return (
@@ -19,17 +19,20 @@ class PostDetail extends Component {
             <div>
               <Header>{this.props.post.postTitle}</Header>
               <p>{this.props.post.postContent}</p>
+              <span>by {this.props.user.userFullName}</span>
             </div>
 
             <div>
-              <a href="#editPost">
+              <a href="#editPost"
+              onClick={this.handleOpen}>
+
                 <UpdatePostForm
                   post={this.props.post}
                   updatePost={this.props.updatePost}
                   user={this.props.user}
                 />
-                Submit Changes to Your Post
-              </a>
+               Edit
+               </a>
               <div />
             </div>
           </Modal.Description>

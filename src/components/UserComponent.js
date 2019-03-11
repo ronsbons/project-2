@@ -21,8 +21,8 @@ class UserComponent extends Component {
                 {/* <h3>{this.props.user._id}</h3> */}
                 {/* <h3>{this.props.user.userPhoto}</h3> */}
                 <h3 className="f2 mb2">{this.props.user.userFullName}</h3>
-                <h3 className='f4 fw4 gray mt0'>{this.props.user.userCity}</h3>
-                <h3>{this.props.user.userJoinDate}</h3>
+                <h3 className='f4 fw4 gray mt0'>Home City - {this.props.user.userCity}</h3>
+                <h3> Join Date -{this.props.user.userJoinDate}</h3>
                 <UserForm 
                   user={this.props.user}
                   updateUser={this.props.updateUser}
