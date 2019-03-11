@@ -1,3 +1,4 @@
+ /* Images */
 .frisco {
   height: 50vh;
   background-image: url(https://static1.squarespace.com/static/5310c08be4b08602cbfa1763/t/5a8c0f04c83025f59a101e9f/1519763109249/LB-CulturalCities-CultureTrip.jpg?format=1500w);
@@ -6,15 +7,12 @@
   background-position: fixed;
 }
 
-.opacity {
-  opacity: .2;
-}
-
+ /* Floats */
 .float-right {
   float: right;
-
 }
 
+/* Header Title */
 .highlight-header {
     background-color: #f78923 ;
     line-height: 60%;
@@ -24,22 +22,18 @@
     content: '';
 }
 
-
 .letterY {
     color: rgb(34, 34, 34);
     font-weight: 600;
 }
 
 /* User Login Form */
-
 .errorMessage {
     color:red;
 
 }
 
-
-
-List Styles
+/* List Items */
 ul {
     margin: 0;
     list-style: none;
@@ -70,43 +64,42 @@ ul {
     text-decoration: none;
   }
 
-  /* User Page */
-
+/* User Page */
 #userPhoto {
     border-radius: 50%
   }
 
-  a {
-      margin-right: 1em;
-  }
+  /* Links */
+ a:hover {
+  text-decoration: none;
+  cursor:pointer;
+  color: black;
+}
 
-  .userComp {
-    background-image: url(https://cdn.theculturetrip.com/wp-content/uploads/2017/07/hcti-078-lukebrookes_travelapps.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    position: scroll;
-  }
+a {
+  margin-right: 1em;
+  color:white;
+}
 
-  .cityComp {
-    background-image: url(https://cdn.theculturetrip.com/wp-content/uploads/2017/07/hcti-078-lukebrookes_travelapps.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 170vh;
-    position: scroll;
-  }
-
-
-.userContainer {
+/* Containers */
+  .userContainer {
     display: flex;
     width: 100%;
   }
-  
-  a  {
-      color:red    
-  }
-  
-  a:hover a:hover {
-      text-decoration: none;
-      cursor:pointer;
-    }
+    
+ /* Components */
+ .userComp {
+  background-image: url(https://cdn.theculturetrip.com/wp-content/uploads/2017/07/hcti-078-lukebrookes_travelapps.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: scroll;
+}
+
+.cityComp {
+  background-image: url(https://cdn.theculturetrip.com/wp-content/uploads/2017/07/hcti-078-lukebrookes_travelapps.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 170vh;
+  position: scroll;
+}
